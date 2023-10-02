@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html class="client-nojs vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-sticky-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-zebra-design-disabled vector-feature-custom-font-size-clientpref-disabled vector-feature-client-preferences-disabled" lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Kubernetes - Wikipedia, la enciclopedia libre</title>
+<script>(function(){var className="client-js vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-sticky-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-zebra-design-disabled vector-feature-custom-font-size-clientpref-disabled vector-feature-client-preferences-disabled";var cookie=document.cookie.match(/(?:^|; )eswikimwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","enero",
+"febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"wgRequestId":"2c58902d-30e0-4efc-85b3-97d5e3d97e86","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Kubernetes","wgTitle":"Kubernetes","wgCurRevisionId":153717770,"wgRevisionId":153717770,"wgArticleId":7991557,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Wikipedia:Artículos demasiado complejos","Wikipedia:Artículos con texto en griego","Wikipedia:Artículos con pasajes que requieren referencias","Wikipedia:Artículos con identificadores GND","Computación en nube","Software libre","Software de contenerización","Software programado en Go"],"wgPageViewLanguage":"es","wgPageContentLanguage":"es","wgPageContentModel":"wikitext","wgRelevantPageName":"Kubernetes","wgRelevantArticleId":7991557,"wgIsProbablyEditable":true,"wgRelevantPageIsProbablyEditable":true,
+"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMFDisplayWikibaseDescriptions":{"search":true,"watchlist":true,"tagline":true,"nearby":true},"wgWMESchemaEditAttemptStepOversample":false,"wgWMEPageLength":20000,"wgNoticeProject":"wikipedia","wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgPopupsFlags":10,"wgVisualEditor":{"pageLanguageCode":"es","pageLanguageDir":"ltr","pageVariantFallbacks":"es"},"wgULSCurrentAutonym":"español","wgCentralAuthMobileDomain":false,"wgEditSubmitButtonLabelPublish":true,"wgULSPosition":"interlanguage","wgULSisCompactLinksEnabled":true,"wgULSisLanguageSelectorEmpty":false,"wgWikibaseItemId":"Q22661306","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"],"GEHomepageSuggestedEditsEnableTopics":true,"wgGETopicsMatchModeEnabled":true,"wgGEStructuredTaskRejectionReasonTextInputEnabled":false,"wgGELevelingUpEnabledForUser":false};RLSTATE={
+"skins.vector.user.styles":"ready","ext.gadget.imagenesinfobox":"ready","ext.globalCssJs.user.styles":"ready","site.styles":"ready","user.styles":"ready","skins.vector.user":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","codex-search-styles":"ready","skins.vector.styles":"ready","skins.vector.icons":"ready","ext.wikimediaBadges":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","wikibase.client.init":"ready"};RLPAGEMODULES=["ext.cite.ux-enhancements","site","mediawiki.page.ready","mediawiki.toc","skins.vector.js","ext.urlShortener.toolbar","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.cx.eventlogging.campaigns","ext.quicksurveys.init","ext.centralNotice.geoIP","ext.centralNotice.startUp","ext.gadget.a-commons-directo","ext.gadget.ReferenceTooltips","ext.gadget.refToolbar","ext.gadget.switcher","ext.centralauth.centralautologin","mmv.head",
+"mmv.bootstrap.autostart","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.echo.centralauth","ext.uls.compactlinks","ext.uls.interface","ext.cx.uls.quick.actions","wikibase.client.vector-2022","ext.checkUser.clientHints","ext.growthExperiments.SuggestedEditSession"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/load.php?lang=es&amp;modules=codex-search-styles%7Cext.cite.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cskins.vector.icons%2Cstyles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector-2022">
+<script async="" src="/w/load.php?lang=es&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector-2022"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/load.php?lang=es&amp;modules=ext.gadget.imagenesinfobox&amp;only=styles&amp;skin=vector-2022">
+<link rel="stylesheet" href="/w/load.php?lang=es&amp;modules=site.styles&amp;only=styles&amp;skin=vector-2022">
+<noscript><link rel="stylesheet" href="/w/load.php?lang=es&amp;modules=noscript&amp;only=styles&amp;skin=vector-2022"></noscript>
+<meta name="generator" content="MediaWiki 1.41.0-wmf.27">
+<meta name="referrer" content="origin">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/b/be/Kubernetes.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="849">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Kubernetes.png/800px-Kubernetes.png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="566">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Kubernetes.png/640px-Kubernetes.png">
+<meta property="og:image:width" content="640">
+<meta property="og:image:height" content="453">
+<meta name="viewport" content="width=1000">
+<meta property="og:title" content="Kubernetes - Wikipedia, la enciclopedia libre">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="//upload.wikimedia.org">
+<link rel="alternate" media="only screen and (max-width: 720px)" href="//es.m.wikipedia.org/wiki/Kubernetes">
+<link rel="alternate" type="application/x-wiki" title="Editar" href="/w/index.php?title=Kubernetes&amp;action=edit">
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png">
+<link rel="icon" href="/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (es)">
+<link rel="EditURI" type="application/rsd+xml" href="//es.wikipedia.org/w/api.php?action=rsd">
+<link rel="canonical" href="https://es.wikipedia.org/wiki/Kubernetes">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de Wikipedia" href="/w/index.php?title=Especial:CambiosRecientes&amp;feed=atom">
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<link rel="dns-prefetch" href="//login.wikimedia.org">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Kubernetes rootpage-Kubernetes skin-vector-2022 action-view"><a class="mw-jump-link" href="#bodyContent">Ir al contenido</a>
+<div class="vector-header-container">
+	<header class="vector-header mw-header">
+		<div class="vector-header-start">
+			<nav class="vector-main-menu-landmark" aria-label="Sitio" role="navigation">
+				
+<div id="vector-main-menu-dropdown" class="vector-dropdown vector-main-menu-dropdown vector-button-flush-left vector-button-flush-right"  >
+	<input type="checkbox" id="vector-main-menu-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-main-menu-dropdown" class="vector-dropdown-checkbox "  aria-label="Menú principal"  >
+	<label id="vector-main-menu-dropdown-label" for="vector-main-menu-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-menu mw-ui-icon-wikimedia-menu"></span>
+
+<span class="vector-dropdown-label-text">Menú principal</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+				<div id="vector-main-menu-unpinned-container" class="vector-unpinned-container">
+		
+<div id="vector-main-menu" class="vector-main-menu vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-main-menu-pinnable-header vector-pinnable-header-unpinned"
+	data-feature-name="main-menu-pinned"
+	data-pinnable-element-id="vector-main-menu"
+	data-pinned-container-id="vector-main-menu-pinned-container"
+	data-unpinned-container-id="vector-main-menu-unpinned-container"
+>
+	<div class="vector-pinnable-header-label">Menú principal</div>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-main-menu.pin">mover a la barra lateral</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-main-menu.unpin">ocultar</button>
+</div>
+
+	
+<div id="p-navigation" class="vector-menu mw-portlet mw-portlet-navigation"  >
+	<div class="vector-menu-heading">
+		Navegación
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/wiki/Wikipedia:Portada" title="Visitar la página principal [z]" accesskey="z"><span>Portada</span></a></li><li id="n-portal" class="mw-list-item"><a href="/wiki/Portal:Comunidad" title="Acerca del proyecto, lo que puedes hacer, dónde encontrar información"><span>Portal de la comunidad</span></a></li><li id="n-currentevents" class="mw-list-item"><a href="/wiki/Portal:Actualidad" title="Encuentra información de contexto sobre acontecimientos actuales"><span>Actualidad</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/wiki/Especial:CambiosRecientes" title="Lista de cambios recientes en la wiki [r]" accesskey="r"><span>Cambios recientes</span></a></li><li id="n-newpages" class="mw-list-item"><a href="/wiki/Especial:P%C3%A1ginasNuevas"><span>Páginas nuevas</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/wiki/Especial:Aleatoria" title="Cargar una página al azar [x]" accesskey="x"><span>Página aleatoria</span></a></li><li id="n-help" class="mw-list-item"><a href="/wiki/Ayuda:Contenidos" title="El lugar para aprender"><span>Ayuda</span></a></li><li id="n-sitesupport" class="mw-list-item"><a href="//donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_es.wikipedia.org&amp;uselang=es" title="Apóyanos"><span>Donaciones</span></a></li><li id="n-bug_in_article" class="mw-list-item"><a href="/wiki/Wikipedia:Informes_de_error"><span>Notificar un error</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+	
+	
+	
+<div class="vector-main-menu-action vector-main-menu-action-lang-alert">
+	<div class="vector-main-menu-action-item">
+		<div class="vector-main-menu-action-heading vector-menu-heading">Idiomas</div>
+		<div class="vector-main-menu-action-content vector-menu-content">
+			<div class="mw-message-box cdx-message cdx-message--block mw-message-box-notice cdx-message--notice vector-language-sidebar-alert"><span class="cdx-message__icon"></span><div class="cdx-message__content">Los enlaces de idiomas se encuentran en la parte superior de la página, frente al título.</div></div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+				</div>
+
+	</div>
+</div>
+
+		</nav>
+			
+<a href="/wiki/Wikipedia:Portada" class="mw-logo">
+	<img class="mw-logo-icon" src="/static/images/icons/wikipedia.png" alt="" aria-hidden="true" height="50" width="50">
+	<span class="mw-logo-container">
+		<img class="mw-logo-wordmark" alt="Wikipedia" src="/static/images/mobile/copyright/wikipedia-wordmark-en.svg" style="width: 7.5em; height: 1.125em;">
+		<img class="mw-logo-tagline" alt="La enciclopedia libre" src="/static/images/mobile/copyright/wikipedia-tagline-es.svg" width="120" height="13" style="width: 7.5em; height: 0.8125em;">
+	</span>
+</a>
+
+		</div>
+		<div class="vector-header-end">
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-collapses vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<a href="/wiki/Especial:Buscar" class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only search-toggle" id="" title="Buscar en este wiki [f]" accesskey="f"><span class="vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search"></span>
+
+<span>Buscar</span>
+	</a>
+	<div class="vector-typeahead-search-container">
+		<div class="cdx-typeahead-search cdx-typeahead-search--show-thumbnail cdx-typeahead-search--auto-expand-width">
+			<form action="/w/index.php" id="searchform" class="cdx-search-input cdx-search-input--has-end-button">
+				<div id="simpleSearch" class="cdx-search-input__input-wrapper"  data-search-loc="header-moved">
+					<div class="cdx-text-input cdx-text-input--has-start-icon">
+						<input
+							class="cdx-text-input__input"
+							 type="search" name="search" placeholder="Buscar en Wikipedia" aria-label="Buscar en Wikipedia" autocapitalize="sentences" title="Buscar en este wiki [f]" accesskey="f" id="searchInput"
+							>
+						<span class="cdx-text-input__icon cdx-text-input__start-icon"></span>
+					</div>
+					<input type="hidden" name="title" value="Especial:Buscar">
+				</div>
+				<button class="cdx-button cdx-search-input__end-button">Buscar</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+			<nav class="vector-user-links" aria-label="Herramientas personales" role="navigation" >
+	
+<div id="p-vector-user-menu-overflow" class="vector-menu mw-portlet mw-portlet-vector-user-menu-overflow"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount-2" class="user-links-collapsible-item mw-list-item"><a href="/w/index.php?title=Especial:Crear_una_cuenta&amp;returnto=Kubernetes" title="Te recomendamos crear una cuenta e iniciar sesión; sin embargo, no es obligatorio"><span>Crear una cuenta</span></a></li><li id="pt-login-2" class="user-links-collapsible-item mw-list-item"><a href="/w/index.php?title=Especial:Entrar&amp;returnto=Kubernetes" title="Te recomendamos iniciar sesión, aunque no es obligatorio [o]" accesskey="o"><span>Acceder</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+	
+<div id="vector-user-links-dropdown" class="vector-dropdown vector-user-menu vector-button-flush-right vector-user-menu-logged-out"  title="Más opciones" >
+	<input type="checkbox" id="vector-user-links-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-user-links-dropdown" class="vector-dropdown-checkbox "  aria-label="Herramientas personales"  >
+	<label id="vector-user-links-dropdown-label" for="vector-user-links-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-ellipsis mw-ui-icon-wikimedia-ellipsis"></span>
+
+<span class="vector-dropdown-label-text">Herramientas personales</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+		
+<div id="p-personal" class="vector-menu mw-portlet mw-portlet-personal user-links-collapsible-item"  title="Menú de usuario" >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-createaccount" class="user-links-collapsible-item mw-list-item"><a href="/w/index.php?title=Especial:Crear_una_cuenta&amp;returnto=Kubernetes" title="Te recomendamos crear una cuenta e iniciar sesión; sin embargo, no es obligatorio"><span class="vector-icon mw-ui-icon-userAdd mw-ui-icon-wikimedia-userAdd"></span> <span>Crear una cuenta</span></a></li><li id="pt-login" class="user-links-collapsible-item mw-list-item"><a href="/w/index.php?title=Especial:Entrar&amp;returnto=Kubernetes" title="Te recomendamos iniciar sesión, aunque no es obligatorio [o]" accesskey="o"><span class="vector-icon mw-ui-icon-logIn mw-ui-icon-wikimedia-logIn"></span> <span>Acceder</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-user-menu-anon-editor" class="vector-menu mw-portlet mw-portlet-user-menu-anon-editor"  >
+	<div class="vector-menu-heading">
+		Páginas para editores desconectados <a href="/wiki/Ayuda:Introducci%C3%B3n" aria-label="Obtenga más información sobre editar"><span>más información</span></a>
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-anoncontribs" class="mw-list-item"><a href="/wiki/Especial:MisContribuciones" title="Una lista de modificaciones hechas desde esta dirección IP [y]" accesskey="y"><span>Contribuciones</span></a></li><li id="pt-anontalk" class="mw-list-item"><a href="/wiki/Especial:MiDiscusi%C3%B3n" title="Discusión sobre ediciones hechas desde esta dirección IP [n]" accesskey="n"><span>Discusión</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+	
+	</div>
+</div>
+
+</nav>
+
+		</div>
+	</header>
+</div>
+<div class="mw-page-container">
+	<div class="mw-page-container-inner">
+		<div class="vector-main-menu-container ">
+			<div id="mw-navigation">
+				<nav id="mw-panel" class="vector-main-menu-landmark" aria-label="Sitio" role="navigation">
+					<div id="vector-main-menu-pinned-container" class="vector-pinned-container">
+				
+					</div>
+		</nav>
+			</div>
+		</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"><!-- CentralNotice --></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="vector-menu-checkbox">
+		<nav id="mw-panel-toc" role="navigation" aria-label="Contenidos" data-event-name="ui.sidebar-toc" class="mw-table-of-contents-container vector-toc-landmark vector-sticky-pinned-container">
+			<div id="vector-toc-pinned-container" class="vector-pinned-container">
+					<div id="vector-toc" class="vector-toc vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-toc-pinnable-header vector-pinnable-header-pinned"
+	data-feature-name="toc-pinned"
+	data-pinnable-element-id="vector-toc"
+	
+	
+>
+	<h2 class="vector-pinnable-header-label">Contenidos</h2>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-toc.pin">mover a la barra lateral</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-toc.unpin">ocultar</button>
+</div>
+
+
+	<ul class="vector-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text"
+			class="vector-toc-list-item vector-toc-level-1">
+			<a href="#" class="vector-toc-link">
+				<div class="vector-toc-text">Inicio</div>
+			</a>
+		</li>
+		<li id="toc-Historia"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Historia">
+			<div class="vector-toc-text">
+			<span class="vector-toc-numb">1</span>Historia</div>
+		</a>
+		
+		<ul id="toc-Historia-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+	<li id="toc-Diseño"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Diseño">
+			<div class="vector-toc-text">
+			<span class="vector-toc-numb">2</span>Diseño</div>
+		</a>
+		
+			<button aria-controls="toc-Diseño-sublist" class="cdx-button cdx-button--weight-quiet cdx-button--icon-only vector-toc-toggle">
+				<span class="vector-icon vector-icon--x-small mw-ui-icon-wikimedia-expand"></span>
+				<span>Alternar subsección Diseño</span>
+			</button>
+		
+		<ul id="toc-Diseño-sublist" class="vector-toc-list">
+			<li id="toc-Cápsulas_(Pods)"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Cápsulas_(Pods)">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">2.1</span>Cápsulas (<i>Pods</i>)</div>
+			</a>
+			
+			<ul id="toc-Cápsulas_(Pods)-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Etiquetas_y_selectores"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Etiquetas_y_selectores">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">2.2</span>Etiquetas y selectores</div>
+			</a>
+			
+			<ul id="toc-Etiquetas_y_selectores-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Controladores"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Controladores">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">2.3</span>Controladores</div>
+			</a>
+			
+			<ul id="toc-Controladores-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Servicios"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Servicios">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">2.4</span>Servicios</div>
+			</a>
+			
+			<ul id="toc-Servicios-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+	</ul>
+	</li>
+	<li id="toc-Módulos_básicos_de_Kubernetes"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Módulos_básicos_de_Kubernetes">
+			<div class="vector-toc-text">
+			<span class="vector-toc-numb">3</span>Módulos básicos de Kubernetes</div>
+		</a>
+		
+			<button aria-controls="toc-Módulos_básicos_de_Kubernetes-sublist" class="cdx-button cdx-button--weight-quiet cdx-button--icon-only vector-toc-toggle">
+				<span class="vector-icon vector-icon--x-small mw-ui-icon-wikimedia-expand"></span>
+				<span>Alternar subsección Módulos básicos de Kubernetes</span>
+			</button>
+		
+		<ul id="toc-Módulos_básicos_de_Kubernetes-sublist" class="vector-toc-list">
+			<li id="toc-Creación_de_un_clúster_de_Kubernetes"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Creación_de_un_clúster_de_Kubernetes">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">3.1</span>Creación de un clúster de Kubernetes</div>
+			</a>
+			
+			<ul id="toc-Creación_de_un_clúster_de_Kubernetes-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Despliegue_de_una_aplicación"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Despliegue_de_una_aplicación">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">3.2</span>Despliegue de una aplicación</div>
+			</a>
+			
+			<ul id="toc-Despliegue_de_una_aplicación-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Exploración_de_aplicaciones"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Exploración_de_aplicaciones">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">3.3</span>Exploración de aplicaciones</div>
+			</a>
+			
+			<ul id="toc-Exploración_de_aplicaciones-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Mantenimiento_de_Pods"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Mantenimiento_de_Pods">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">3.4</span>Mantenimiento de <i>Pods</i></div>
+			</a>
+			
+			<ul id="toc-Mantenimiento_de_Pods-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Ampliación_de_aplicaciones"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Ampliación_de_aplicaciones">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">3.5</span>Ampliación de aplicaciones</div>
+			</a>
+			
+			<ul id="toc-Ampliación_de_aplicaciones-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Actualización_de_aplicaciones"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Actualización_de_aplicaciones">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">3.6</span>Actualización de aplicaciones</div>
+			</a>
+			
+			<ul id="toc-Actualización_de_aplicaciones-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+	</ul>
+	</li>
+	<li id="toc-Arquitectura"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Arquitectura">
+			<div class="vector-toc-text">
+			<span class="vector-toc-numb">4</span>Arquitectura</div>
+		</a>
+		
+			<button aria-controls="toc-Arquitectura-sublist" class="cdx-button cdx-button--weight-quiet cdx-button--icon-only vector-toc-toggle">
+				<span class="vector-icon vector-icon--x-small mw-ui-icon-wikimedia-expand"></span>
+				<span>Alternar subsección Arquitectura</span>
+			</button>
+		
+		<ul id="toc-Arquitectura-sublist" class="vector-toc-list">
+			<li id="toc-etc"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#etc">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">4.1</span>etc</div>
+			</a>
+			
+			<ul id="toc-etc-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Servidor_de_API"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Servidor_de_API">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">4.2</span>Servidor de API</div>
+			</a>
+			
+			<ul id="toc-Servidor_de_API-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Planificador"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Planificador">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">4.3</span>Planificador</div>
+			</a>
+			
+			<ul id="toc-Planificador-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Administrador_del_controlador"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Administrador_del_controlador">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">4.4</span>Administrador del controlador</div>
+			</a>
+			
+			<ul id="toc-Administrador_del_controlador-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Nodo_Kubernetes"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Nodo_Kubernetes">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">4.5</span>Nodo Kubernetes</div>
+			</a>
+			
+			<ul id="toc-Nodo_Kubernetes-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Kubelet"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Kubelet">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">4.6</span>Kubelet</div>
+			</a>
+			
+			<ul id="toc-Kubelet-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Kube-Proxy"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#Kube-Proxy">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">4.7</span>Kube-Proxy</div>
+			</a>
+			
+			<ul id="toc-Kube-Proxy-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+		<li id="toc-cAdvisor"
+			class="vector-toc-list-item vector-toc-level-2">
+			<a class="vector-toc-link" href="#cAdvisor">
+				<div class="vector-toc-text">
+				<span class="vector-toc-numb">4.8</span>cAdvisor</div>
+			</a>
+			
+			<ul id="toc-cAdvisor-sublist" class="vector-toc-list">
+			</ul>
+		</li>
+	</ul>
+	</li>
+	<li id="toc-Véase_también"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Véase_también">
+			<div class="vector-toc-text">
+			<span class="vector-toc-numb">5</span>Véase también</div>
+		</a>
+		
+		<ul id="toc-Véase_también-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+	<li id="toc-Referencias"
+		class="vector-toc-list-item vector-toc-level-1 vector-toc-list-item-expanded">
+		<a class="vector-toc-link" href="#Referencias">
+			<div class="vector-toc-text">
+			<span class="vector-toc-numb">6</span>Referencias</div>
+		</a>
+		
+		<ul id="toc-Referencias-sublist" class="vector-toc-list">
+		</ul>
+	</li>
+</ul>
+</div>
+
+			</div>
+		</nav>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main">
+				<header class="mw-body-header vector-page-titlebar">
+					<label
+						id="vector-toc-collapsed-button"
+						class="cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet vector-button-flush-left cdx-button--icon-only"
+						for="vector-toc-collapsed-checkbox"
+						role="button"
+						aria-controls="vector-toc"
+						tabindex="0"
+						title="Tabla de contenidos">
+						<span class="vector-icon mw-ui-icon-wikimedia-listBullet"></span>
+						<span>Cambiar a la tabla de contenidos</span>
+					</label>
+					<nav role="navigation" aria-label="Contenidos" class="vector-toc-landmark">
+						
+<div id="vector-page-titlebar-toc" class="vector-dropdown vector-page-titlebar-toc vector-button-flush-left"  >
+	<input type="checkbox" id="vector-page-titlebar-toc-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-page-titlebar-toc" class="vector-dropdown-checkbox "  aria-label="Cambiar a la tabla de contenidos"  >
+	<label id="vector-page-titlebar-toc-label" for="vector-page-titlebar-toc-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--icon-only " aria-hidden="true"  ><span class="vector-icon mw-ui-icon-listBullet mw-ui-icon-wikimedia-listBullet"></span>
+
+<span class="vector-dropdown-label-text">Cambiar a la tabla de contenidos</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+							<div id="vector-page-titlebar-toc-unpinned-container" class="vector-unpinned-container">
+			</div>
+		
+	</div>
+</div>
+
+					</nav>
+					<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Kubernetes</span></h1>
+							
+<div id="p-lang-btn" class="vector-dropdown mw-portlet mw-portlet-lang"  >
+	<input type="checkbox" id="p-lang-btn-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-lang-btn" class="vector-dropdown-checkbox mw-interlanguage-selector" aria-label="Ir a un artículo en otro idioma. Disponible en 35 idiomas"   >
+	<label id="p-lang-btn-label" for="p-lang-btn-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet cdx-button--action-progressive mw-portlet-lang-heading-35" aria-hidden="true"  ><span class="vector-icon mw-ui-icon-language-progressive mw-ui-icon-wikimedia-language-progressive"></span>
+
+<span class="vector-dropdown-label-text">35 idiomas</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+		<div class="vector-menu-content">
+			
+			<ul class="vector-menu-content-list">
+				
+				<li class="interlanguage-link interwiki-ar mw-list-item"><a href="https://ar.wikipedia.org/wiki/%D9%83%D9%88%D8%A8%D9%8A%D8%B1%D9%86%D9%8A%D8%AA%D9%8A%D8%B3" title="كوبيرنيتيس (árabe)" lang="ar" hreflang="ar" class="interlanguage-link-target"><span>العربية</span></a></li><li class="interlanguage-link interwiki-ary mw-list-item"><a href="https://ary.wikipedia.org/wiki/%D9%83%D9%88%D8%A8%D9%8A%D8%B1%D9%86%D9%8A%D8%AA%D9%8A%D8%B3" title="كوبيرنيتيس (Moroccan Arabic)" lang="ary" hreflang="ary" class="interlanguage-link-target"><span>الدارجة</span></a></li><li class="interlanguage-link interwiki-bg mw-list-item"><a href="https://bg.wikipedia.org/wiki/Kubernetes" title="Kubernetes (búlgaro)" lang="bg" hreflang="bg" class="interlanguage-link-target"><span>Български</span></a></li><li class="interlanguage-link interwiki-bs mw-list-item"><a href="https://bs.wikipedia.org/wiki/Kubernetes" title="Kubernetes (bosnio)" lang="bs" hreflang="bs" class="interlanguage-link-target"><span>Bosanski</span></a></li><li class="interlanguage-link interwiki-ca mw-list-item"><a href="https://ca.wikipedia.org/wiki/Kubernetes" title="Kubernetes (catalán)" lang="ca" hreflang="ca" class="interlanguage-link-target"><span>Català</span></a></li><li class="interlanguage-link interwiki-cs mw-list-item"><a href="https://cs.wikipedia.org/wiki/Kubernetes" title="Kubernetes (checo)" lang="cs" hreflang="cs" class="interlanguage-link-target"><span>Čeština</span></a></li><li class="interlanguage-link interwiki-de mw-list-item"><a href="https://de.wikipedia.org/wiki/Kubernetes" title="Kubernetes (alemán)" lang="de" hreflang="de" class="interlanguage-link-target"><span>Deutsch</span></a></li><li class="interlanguage-link interwiki-en mw-list-item"><a href="https://en.wikipedia.org/wiki/Kubernetes" title="Kubernetes (inglés)" lang="en" hreflang="en" class="interlanguage-link-target"><span>English</span></a></li><li class="interlanguage-link interwiki-et mw-list-item"><a href="https://et.wikipedia.org/wiki/Kubernetes" title="Kubernetes (estonio)" lang="et" hreflang="et" class="interlanguage-link-target"><span>Eesti</span></a></li><li class="interlanguage-link interwiki-fa mw-list-item"><a href="https://fa.wikipedia.org/wiki/%DA%A9%D9%88%D8%A8%D8%B1%D9%86%D8%AA%DB%8C%D8%B2" title="کوبرنتیز (persa)" lang="fa" hreflang="fa" class="interlanguage-link-target"><span>فارسی</span></a></li><li class="interlanguage-link interwiki-fi mw-list-item"><a href="https://fi.wikipedia.org/wiki/Kubernetes" title="Kubernetes (finés)" lang="fi" hreflang="fi" class="interlanguage-link-target"><span>Suomi</span></a></li><li class="interlanguage-link interwiki-fr mw-list-item"><a href="https://fr.wikipedia.org/wiki/Kubernetes" title="Kubernetes (francés)" lang="fr" hreflang="fr" class="interlanguage-link-target"><span>Français</span></a></li><li class="interlanguage-link interwiki-gl mw-list-item"><a href="https://gl.wikipedia.org/wiki/Kubernetes" title="Kubernetes (gallego)" lang="gl" hreflang="gl" class="interlanguage-link-target"><span>Galego</span></a></li><li class="interlanguage-link interwiki-he mw-list-item"><a href="https://he.wikipedia.org/wiki/Kubernetes" title="Kubernetes (hebreo)" lang="he" hreflang="he" class="interlanguage-link-target"><span>עברית</span></a></li><li class="interlanguage-link interwiki-hu mw-list-item"><a href="https://hu.wikipedia.org/wiki/Kubernetes" title="Kubernetes (húngaro)" lang="hu" hreflang="hu" class="interlanguage-link-target"><span>Magyar</span></a></li><li class="interlanguage-link interwiki-id mw-list-item"><a href="https://id.wikipedia.org/wiki/Kubernetes" title="Kubernetes (indonesio)" lang="id" hreflang="id" class="interlanguage-link-target"><span>Bahasa Indonesia</span></a></li><li class="interlanguage-link interwiki-is mw-list-item"><a href="https://is.wikipedia.org/wiki/Kubernetes" title="Kubernetes (islandés)" lang="is" hreflang="is" class="interlanguage-link-target"><span>Íslenska</span></a></li><li class="interlanguage-link interwiki-it mw-list-item"><a href="https://it.wikipedia.org/wiki/Kubernetes" title="Kubernetes (italiano)" lang="it" hreflang="it" class="interlanguage-link-target"><span>Italiano</span></a></li><li class="interlanguage-link interwiki-ja mw-list-item"><a href="https://ja.wikipedia.org/wiki/Kubernetes" title="Kubernetes (japonés)" lang="ja" hreflang="ja" class="interlanguage-link-target"><span>日本語</span></a></li><li class="interlanguage-link interwiki-ko mw-list-item"><a href="https://ko.wikipedia.org/wiki/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4" title="쿠버네티스 (coreano)" lang="ko" hreflang="ko" class="interlanguage-link-target"><span>한국어</span></a></li><li class="interlanguage-link interwiki-lmo mw-list-item"><a href="https://lmo.wikipedia.org/wiki/Kubernetes" title="Kubernetes (lombardo)" lang="lmo" hreflang="lmo" class="interlanguage-link-target"><span>Lombard</span></a></li><li class="interlanguage-link interwiki-ms mw-list-item"><a href="https://ms.wikipedia.org/wiki/Kubernetes" title="Kubernetes (malayo)" lang="ms" hreflang="ms" class="interlanguage-link-target"><span>Bahasa Melayu</span></a></li><li class="interlanguage-link interwiki-nl mw-list-item"><a href="https://nl.wikipedia.org/wiki/Kubernetes" title="Kubernetes (neerlandés)" lang="nl" hreflang="nl" class="interlanguage-link-target"><span>Nederlands</span></a></li><li class="interlanguage-link interwiki-no mw-list-item"><a href="https://no.wikipedia.org/wiki/Kubernetes" title="Kubernetes (noruego bokmal)" lang="nb" hreflang="nb" class="interlanguage-link-target"><span>Norsk bokmål</span></a></li><li class="interlanguage-link interwiki-pl mw-list-item"><a href="https://pl.wikipedia.org/wiki/Kubernetes" title="Kubernetes (polaco)" lang="pl" hreflang="pl" class="interlanguage-link-target"><span>Polski</span></a></li><li class="interlanguage-link interwiki-pt mw-list-item"><a href="https://pt.wikipedia.org/wiki/Kubernetes" title="Kubernetes (portugués)" lang="pt" hreflang="pt" class="interlanguage-link-target"><span>Português</span></a></li><li class="interlanguage-link interwiki-ro mw-list-item"><a href="https://ro.wikipedia.org/wiki/Kubernetes" title="Kubernetes (rumano)" lang="ro" hreflang="ro" class="interlanguage-link-target"><span>Română</span></a></li><li class="interlanguage-link interwiki-ru mw-list-item"><a href="https://ru.wikipedia.org/wiki/Kubernetes" title="Kubernetes (ruso)" lang="ru" hreflang="ru" class="interlanguage-link-target"><span>Русский</span></a></li><li class="interlanguage-link interwiki-sah mw-list-item"><a href="https://sah.wikipedia.org/wiki/Kubernetes" title="Kubernetes (sakha)" lang="sah" hreflang="sah" class="interlanguage-link-target"><span>Саха тыла</span></a></li><li class="interlanguage-link interwiki-sq mw-list-item"><a href="https://sq.wikipedia.org/wiki/Kubernetes" title="Kubernetes (albanés)" lang="sq" hreflang="sq" class="interlanguage-link-target"><span>Shqip</span></a></li><li class="interlanguage-link interwiki-ta mw-list-item"><a href="https://ta.wikipedia.org/wiki/%E0%AE%95%E0%AF%82%E0%AE%AA%E0%AF%86%E0%AE%B0%E0%AF%8D%E0%AE%A9%E0%AF%86%E0%AE%B1%E0%AF%8D%E0%AE%B1%E0%AE%BF%E0%AE%9A%E0%AF%81" title="கூபெர்னெற்றிசு (tamil)" lang="ta" hreflang="ta" class="interlanguage-link-target"><span>தமிழ்</span></a></li><li class="interlanguage-link interwiki-te mw-list-item"><a href="https://te.wikipedia.org/wiki/%E0%B0%95%E0%B1%8D%E0%B0%AF%E0%B1%82%E0%B0%AC%E0%B1%86%E0%B0%B0%E0%B1%8D%E2%80%8C%E0%B0%A8%E0%B1%86%E0%B0%9F%E0%B1%8D%E0%B0%B8%E0%B1%8D" title="క్యూబెర్‌నెట్స్ (telugu)" lang="te" hreflang="te" class="interlanguage-link-target"><span>తెలుగు</span></a></li><li class="interlanguage-link interwiki-tr mw-list-item"><a href="https://tr.wikipedia.org/wiki/Kubernetes" title="Kubernetes (turco)" lang="tr" hreflang="tr" class="interlanguage-link-target"><span>Türkçe</span></a></li><li class="interlanguage-link interwiki-uk mw-list-item"><a href="https://uk.wikipedia.org/wiki/Kubernetes" title="Kubernetes (ucraniano)" lang="uk" hreflang="uk" class="interlanguage-link-target"><span>Українська</span></a></li><li class="interlanguage-link interwiki-zh mw-list-item"><a href="https://zh.wikipedia.org/wiki/Kubernetes" title="Kubernetes (chino)" lang="zh" hreflang="zh" class="interlanguage-link-target"><span>中文</span></a></li>
+			</ul>
+			<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q22661306#sitelinks-wikipedia" title="Editar enlaces interlingüísticos" class="wbc-editpage">Editar enlaces</a></span></div>
+		</div>
+
+	</div>
+</div>
+</header>
+				<div class="vector-page-toolbar">
+					<div class="vector-page-toolbar-container">
+						<div id="left-navigation">
+							<nav aria-label="Espacios de nombres">
+								
+<div id="p-associated-pages" class="vector-menu vector-menu-tabs mw-portlet mw-portlet-associated-pages"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-main" class="selected vector-tab-noicon mw-list-item"><a href="/wiki/Kubernetes" title="Ver la página de contenido [c]" accesskey="c"><span>Artículo</span></a></li><li id="ca-talk" class="vector-tab-noicon mw-list-item"><a href="/wiki/Discusi%C3%B3n:Kubernetes" rel="discussion" title="Discusión acerca de la página [t]" accesskey="t"><span>Discusión</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+								
+<div id="p-variants" class="vector-dropdown emptyPortlet"  >
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-dropdown-checkbox " aria-label="Cambiar variante de idioma"   >
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet" aria-hidden="true"  ><span class="vector-dropdown-label-text">español</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+					
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</div>
+
+				
+	</div>
+</div>
+
+							</nav>
+						</div>
+						<div id="right-navigation" class="vector-collapsible">
+							<nav aria-label="Vistas">
+								
+<div id="p-views" class="vector-menu vector-menu-tabs mw-portlet mw-portlet-views"  >
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected vector-tab-noicon mw-list-item"><a href="/wiki/Kubernetes"><span>Leer</span></a></li><li id="ca-edit" class="vector-tab-noicon mw-list-item"><a href="/w/index.php?title=Kubernetes&amp;action=edit" title="Editar esta página [e]" accesskey="e"><span>Editar</span></a></li><li id="ca-history" class="vector-tab-noicon mw-list-item"><a href="/w/index.php?title=Kubernetes&amp;action=history" title="Versiones anteriores de esta página [h]" accesskey="h"><span>Ver historial</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+							</nav>
+				
+							<nav class="vector-page-tools-landmark" aria-label="Page tools">
+								
+<div id="vector-page-tools-dropdown" class="vector-dropdown vector-page-tools-dropdown"  >
+	<input type="checkbox" id="vector-page-tools-dropdown-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-vector-page-tools-dropdown" class="vector-dropdown-checkbox "  aria-label="Herramientas"  >
+	<label id="vector-page-tools-dropdown-label" for="vector-page-tools-dropdown-checkbox" class="vector-dropdown-label cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-quiet" aria-hidden="true"  ><span class="vector-dropdown-label-text">Herramientas</span>
+	</label>
+	<div class="vector-dropdown-content">
+
+
+									<div id="vector-page-tools-unpinned-container" class="vector-unpinned-container">
+						
+<div id="vector-page-tools" class="vector-page-tools vector-pinnable-element">
+	<div
+	class="vector-pinnable-header vector-page-tools-pinnable-header vector-pinnable-header-unpinned"
+	data-feature-name="page-tools-pinned"
+	data-pinnable-element-id="vector-page-tools"
+	data-pinned-container-id="vector-page-tools-pinned-container"
+	data-unpinned-container-id="vector-page-tools-unpinned-container"
+>
+	<div class="vector-pinnable-header-label">Herramientas</div>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-pin-button" data-event-name="pinnable-header.vector-page-tools.pin">mover a la barra lateral</button>
+	<button class="vector-pinnable-header-toggle-button vector-pinnable-header-unpin-button" data-event-name="pinnable-header.vector-page-tools.unpin">ocultar</button>
+</div>
+
+	
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-has-collapsible-items"  title="Más opciones" >
+	<div class="vector-menu-heading">
+		Acciones
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="/wiki/Kubernetes"><span>Leer</span></a></li><li id="ca-more-edit" class="vector-more-collapsible-item mw-list-item"><a href="/w/index.php?title=Kubernetes&amp;action=edit" title="Editar esta página [e]" accesskey="e"><span>Editar</span></a></li><li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="/w/index.php?title=Kubernetes&amp;action=history"><span>Ver historial</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-tb" class="vector-menu mw-portlet mw-portlet-tb"  >
+	<div class="vector-menu-heading">
+		General
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/wiki/Especial:LoQueEnlazaAqu%C3%AD/Kubernetes" title="Lista de todas las páginas de la wiki que enlazan aquí [j]" accesskey="j"><span>Lo que enlaza aquí</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/wiki/Especial:CambiosEnEnlazadas/Kubernetes" rel="nofollow" title="Cambios recientes en las páginas que enlazan con esta [k]" accesskey="k"><span>Cambios en enlazadas</span></a></li><li id="t-upload" class="mw-list-item"><a href="//commons.wikimedia.org/wiki/Special:UploadWizard?uselang=es" title="Subir archivos [u]" accesskey="u"><span>Subir archivo</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/wiki/Especial:P%C3%A1ginasEspeciales" title="Lista de todas las páginas especiales [q]" accesskey="q"><span>Páginas especiales</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/index.php?title=Kubernetes&amp;oldid=153717770" title="Enlace permanente a esta versión de la página"><span>Enlace permanente</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/index.php?title=Kubernetes&amp;action=info" title="Más información sobre esta página"><span>Información de la página</span></a></li><li id="t-urlshortener" class="mw-list-item"><a href="/w/index.php?title=Especial:Acortador_de_URL&amp;url=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2FKubernetes"><span>Obtener URL acortado</span></a></li><li id="t-cite" class="mw-list-item"><a href="/w/index.php?title=Especial:Citar&amp;page=Kubernetes&amp;id=153717770&amp;wpFormIdentifier=titleform" title="Información sobre cómo citar esta página"><span>Citar esta página</span></a></li><li id="t-wikibase" class="mw-list-item"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q22661306" title="Enlace al elemento conectado del repositorio de datos [g]" accesskey="g"><span>Elemento de Wikidata</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-coll-print_export" class="vector-menu mw-portlet mw-portlet-coll-print_export"  >
+	<div class="vector-menu-heading">
+		Imprimir/exportar
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="coll-create_a_book" class="mw-list-item"><a href="/w/index.php?title=Especial:Libro&amp;bookcmd=book_creator&amp;referer=Kubernetes"><span>Crear un libro</span></a></li><li id="coll-download-as-rl" class="mw-list-item"><a href="/w/index.php?title=Especial:DownloadAsPdf&amp;page=Kubernetes&amp;action=show-download-screen"><span>Descargar como PDF</span></a></li><li id="t-print" class="mw-list-item"><a href="/w/index.php?title=Kubernetes&amp;printable=yes" title="Versión imprimible de esta página [p]" accesskey="p"><span>Versión para imprimir</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+<div id="p-wikibase-otherprojects" class="vector-menu mw-portlet mw-portlet-wikibase-otherprojects"  >
+	<div class="vector-menu-heading">
+		En otros proyectos
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li class="wb-otherproject-link wb-otherproject-commons mw-list-item"><a href="https://commons.wikimedia.org/wiki/Category:Kubernetes" hreflang="en"><span>Wikimedia Commons</span></a></li>
+		</ul>
+		
+	</div>
+</div>
+
+</div>
+
+									</div>
+				
+	</div>
+</div>
+
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="vector-column-end">
+					<nav class="vector-page-tools-landmark vector-sticky-pinned-container" aria-label="Page tools">
+						<div id="vector-page-tools-pinned-container" class="vector-pinned-container">
+			
+						</div>
+	</nav>
+				</div>
+				<div id="bodyContent" class="vector-body" aria-labelledby="firstHeading" data-mw-ve-target-container>
+					<div class="vector-body-before-content">
+							<div class="mw-indicators">
+		</div>
+
+						<div id="siteSub" class="noprint">De Wikipedia, la enciclopedia libre</div>
+					</div>
+					<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="es" dir="ltr"><div class="mw-parser-output"><table style="" class="noprint plainlinks ambox ambox-content">
+<tbody><tr>
+<td class="ambox-image" width="40">
+<span class="mw-default-size" typeof="mw:File"><a href="/wiki/Archivo:Help_books.svg" class="mw-file-description"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/5/53/Help_books.svg/40px-Help_books.svg.png" decoding="async" width="40" height="40" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/53/Help_books.svg/60px-Help_books.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/53/Help_books.svg/80px-Help_books.svg.png 2x" data-file-width="320" data-file-height="320" /></a></span></td>
+<td class="ambox-text"><div class="ambox-text-div"><strong>Este artículo o sección tiene un estilo difícil de entender para los lectores interesados en el tema.</strong> <span class="hide-when-compact"><br />Si puedes, por favor <a class="external text" href="https://es.wikipedia.org/w/index.php?title=Kubernetes&amp;action=edit">edítalo</a> y contribuye a hacerlo más accesible para el público general, sin eliminar los detalles técnicos que interesan a los especialistas.</span></div></td>
+</tr>
+</tbody></table>
+<style data-mw-deduplicate="TemplateStyles:r149592226">.mw-parser-output .infobox .imagen{max-width:100%;margin:0 auto}.mw-parser-output .infobox .imagen img{max-width:100%;height:auto}body.skin-timeless .mw-parser-output .infobox .imagen a.image>img{max-width:100%!important;height:auto!important}</style><table class="infobox" style="width:22.7em; line-height: 1.4em; text-align:left; padding:.23em;"><tbody><tr><th colspan="3" class="cabecera software" style="text-align:center;background-color:transparent;color:black;;background-color:#DCEAEC;">Kubernetes</th></tr><tr><td colspan="3" class="imagen" style="text-align:center;width:65%;">
+<span typeof="mw:File"><a href="/wiki/Archivo:Kubernetes_logo.svg" class="mw-file-description"><img src="//upload.wikimedia.org/wikipedia/commons/thumb/6/67/Kubernetes_logo.svg/250px-Kubernetes_logo.svg.png" decoding="async" width="250" height="44" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/67/Kubernetes_logo.svg/375px-Kubernetes_logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/67/Kubernetes_logo.svg/500px-Kubernetes_logo.svg.png 2x" data-file-width="1024" data-file-height="181" /></a></span></td></tr><tr><td colspan="3" class="imagen" style="text-align:center;width:65%;">
+<span typeof="mw:File"><a href="/wiki/Archivo:Kubernetes.png" class="mw-file-description"><img src="//upload.wikimedia.org/wikipedia/commons/thumb/b/be/Kubernetes.png/250px-Kubernetes.png" decoding="async" width="250" height="177" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/be/Kubernetes.png/375px-Kubernetes.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/be/Kubernetes.png/500px-Kubernetes.png 2x" data-file-width="890" data-file-height="630" /></a></span></td></tr><tr><th colspan="3" style="text-align:center;background-color:#DCEAEC;">Información general</th></tr><tr><th scope="row" style="text-align:left;width:35%;background-color:#eef5f6;">Lanzamiento inicial</th><td colspan="2" style="width:65%;">
+7 de junio de 2014</td></tr><tr><th colspan="3" style="text-align:center;background-color:#DCEAEC;">Versiones</th></tr><tr><th scope="row" style="text-align:left;width:35%;background-color:#eef5f6;"><a href="/wiki/Ciclo_de_vida_del_lanzamiento_de_software" title="Ciclo de vida del lanzamiento de software">Última versión estable</a></th><td colspan="2" style="text-align:left;">
+1.28.2<small style="display: block"><a href="/wiki/13_de_septiembre" title="13 de septiembre">13 de septiembre</a> de <a href="/wiki/2023" title="2023">2023</a></small></td></tr><tr><th colspan="3" style="text-align:center;background-color:#DCEAEC;">Enlaces</th></tr><tr><td colspan="3" style="text-align:center;width:65%;">
+<div><a rel="nofollow" class="external text" href="https://kubernetes.io/blog/">Blog</a></div>
+<div><a rel="nofollow" class="external text" href="https://github.com/kubernetes/kubernetes">Repositorio de código</a></div>
+</td></tr><tr><td class="noprint" colspan="3" style="text-align:left;"><div class="plainlinks wikidata-link" style="font-size: 0.85em">&#x5b;<a href="https://www.wikidata.org/wiki/Q22661306" class="extiw" title="d:Q22661306">editar datos en Wikidata</a>&#x5d;</div></td></tr></tbody></table>
+<p><b>Kubernetes</b> (en inglés llamado habitualmente «K8s») es una plataforma de sistema distribuido de código libre para la automatización del despliegue, ajuste de escala y manejo de aplicaciones en <a href="/wiki/Virtualizaci%C3%B3n_a_nivel_de_sistema_operativo" title="Virtualización a nivel de sistema operativo">contenedores</a><sup id="cite_ref-1" class="reference separada"><a href="#cite_note-1"><span class="corchete-llamada">[</span>1<span class="corchete-llamada">]</span></a></sup>&#8203; que fue originalmente diseñado por <a href="/wiki/Google" title="Google">Google</a> y donado a la <a href="/w/index.php?title=Cloud_Native_Computing_Foundation&amp;action=edit&amp;redlink=1" class="new" title="Cloud Native Computing Foundation (aún no redactado)">Cloud Native Computing Foundation</a> (parte de la <a href="/wiki/Linux_Foundation" class="mw-redirect" title="Linux Foundation">Linux Foundation</a>). Soporta diferentes entornos para la ejecución de contenedores, incluido <a href="/wiki/Docker_(software)" title="Docker (software)">Docker</a> (aunque se desaconseja usarlo desde la versión 1.20, y no se soporta desde la versión 1.24)<sup id="cite_ref-2" class="reference separada"><a href="#cite_note-2"><span class="corchete-llamada">[</span>2<span class="corchete-llamada">]</span></a></sup>&#8203;<sup id="cite_ref-3" class="reference separada"><a href="#cite_note-3"><span class="corchete-llamada">[</span>3<span class="corchete-llamada">]</span></a></sup>&#8203;.
+</p>
+<meta property="mw:PageProp/toc" />
+<h2><span class="mw-headline" id="Historia">Historia</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=1" title="Editar sección: Historia">editar</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Kubernetes (en <a href="/wiki/Idioma_griego" title="Idioma griego">griego</a> <span lang="el" title="Texto en idioma griego">κυβερνήτης</span> «timonel, piloto») fue fundado por Joe Beda, Brendan Burns y Craig McLuckie,<sup id="cite_ref-4" class="reference separada"><a href="#cite_note-4"><span class="corchete-llamada">[</span>4<span class="corchete-llamada">]</span></a></sup>&#8203; a quienes se les unieron rápidamente otros ingenieros de Google incluyendo a Brian Grant y Tim Hockin. Fue anunciado por Google a mediados de 2014.<sup id="cite_ref-5" class="reference separada"><a href="#cite_note-5"><span class="corchete-llamada">[</span>5<span class="corchete-llamada">]</span></a></sup>&#8203; Su diseño estuvo fuertemente influido por el sistema Borg de Google y muchos de los principales contribuyentes al proyecto trabajaron antes en Borg.<sup id="cite_ref-6" class="reference separada"><a href="#cite_note-6"><span class="corchete-llamada">[</span>6<span class="corchete-llamada">]</span></a></sup>&#8203;<sup id="cite_ref-7" class="reference separada"><a href="#cite_note-7"><span class="corchete-llamada">[</span>7<span class="corchete-llamada">]</span></a></sup>&#8203; El nombre en clave original para Kubernetes dentro de Google era <i>Project Seven</i> («Proyecto Siete»), una referencia a un personaje de <a href="/wiki/Star_Trek" title="Star Trek">Star Trek</a> que es un  Borg<sup id="cite_ref-8" class="reference separada"><a href="#cite_note-8"><span class="corchete-llamada">[</span>8<span class="corchete-llamada">]</span></a></sup>&#8203; más amigable. Los siete radios de la rueda del logotipo de Kubernetes es una referencia al nombre en clave.
+</p><p>Kubernetes v1.0 fue liberada el 21 de julio de 2015.<sup id="cite_ref-9" class="reference separada"><a href="#cite_note-9"><span class="corchete-llamada">[</span>9<span class="corchete-llamada">]</span></a></sup>&#8203; Junto a esta versión de Kubernetes, Google se asoció con la Linux Foundation para formar la Cloud Native Computing Foundation (CNCF)<sup id="cite_ref-10" class="reference separada"><a href="#cite_note-10"><span class="corchete-llamada">[</span>10<span class="corchete-llamada">]</span></a></sup>&#8203; y ofreció Kubernetes como una tecnología semilla.
+</p><p><a href="/w/index.php?title=Rancher_Labs&amp;action=edit&amp;redlink=1" class="new" title="Rancher Labs (aún no redactado)">Rancher Labs</a> incluye una distribución Kubernetes en su plataforma de mejoramiento de contenedores Rancher.<sup id="cite_ref-11" class="reference separada"><a href="#cite_note-11"><span class="corchete-llamada">[</span>11<span class="corchete-llamada">]</span></a></sup>&#8203; También está siendo utilizada por Red Hat para su producto OpenShift,<sup id="cite_ref-12" class="reference separada"><a href="#cite_note-12"><span class="corchete-llamada">[</span>12<span class="corchete-llamada">]</span></a></sup>&#8203;<sup id="cite_ref-13" class="reference separada"><a href="#cite_note-13"><span class="corchete-llamada">[</span>13<span class="corchete-llamada">]</span></a></sup>&#8203; <a href="/wiki/CoreOS" class="mw-redirect" title="CoreOS">CoreOS</a> para su producto Tectonic, e <a href="/wiki/IBM" title="IBM">IBM</a> para su producto IBM Spectrum Conductor for Containers.<sup id="cite_ref-14" class="reference separada"><a href="#cite_note-14"><span class="corchete-llamada">[</span>14<span class="corchete-llamada">]</span></a></sup>&#8203;
+</p>
+<h2><span id="Dise.C3.B1o"></span><span class="mw-headline" id="Diseño">Diseño</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=2" title="Editar sección: Diseño">editar</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Kubernetes define un conjunto de bloques de construcción (primitivas) que conjuntamente proveen los mecanismos para el despliegue, mantenimiento y escalado de aplicaciones. Los componentes que forman Kubernetes están diseñados para estar débilmente acoplados pero a la vez ser extensibles para que puedan soportar una gran variedad de flujos de trabajo. La extensibilidad es provista en gran parte por la API de Kubernetes, que es utilizada por componentes internos así como extensiones y contenedores ejecutados sobre Kubernetes.<sup id="cite_ref-:0_15-0" class="reference separada"><a href="#cite_note-:0-15"><span class="corchete-llamada">[</span>15<span class="corchete-llamada">]</span></a></sup>&#8203;
+</p>
+<h3><span id="C.C3.A1psulas_.28Pods.29"></span><span class="mw-headline" id="Cápsulas_(Pods)">Cápsulas (<i>Pods</i>)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=3" title="Editar sección: Cápsulas (Pods)">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>La unidad básica de planificación en Kubernetes se denomina <i>cápsula</i> (<i>“pod”</i> en <a href="/wiki/Idioma_ingl%C3%A9s" title="Idioma inglés">idioma inglés</a>). Esta agrega un nivel de abstracción más elevado a los componentes en contenedores. Un <i>pod</i> consta de uno o más contenedores en los que se garantiza su ubicación en el mismo equipo anfitrión y pueden compartir recursos.<sup id="cite_ref-:0_15-1" class="reference separada"><a href="#cite_note-:0-15"><span class="corchete-llamada">[</span>15<span class="corchete-llamada">]</span></a></sup>&#8203; Cada <i>pod</i> en Kubernetes es asignado a una única dirección IP (dentro del clúster) que permite a las aplicaciones utilizar puertos sin riesgos de conflictos.<sup id="cite_ref-:1_16-0" class="reference separada"><a href="#cite_note-:1-16"><span class="corchete-llamada">[</span>16<span class="corchete-llamada">]</span></a></sup>&#8203; Un <i>pod</i> puede definir un volumen, como puede ser un directorio de disco local o un disco de red, y exponerlo a los contenedores dentro del <i>pod</i>.<sup id="cite_ref-17" class="reference separada"><a href="#cite_note-17"><span class="corchete-llamada">[</span>17<span class="corchete-llamada">]</span></a></sup>&#8203; Los <i>pods</i> pueden ser administrados manualmente a través de la API de Kubernetes, o su administración puede ser delegada a un controlador<sup id="cite_ref-:0_15-2" class="reference separada"><a href="#cite_note-:0-15"><span class="corchete-llamada">[</span>15<span class="corchete-llamada">]</span></a></sup>&#8203;
+</p>
+<h3><span class="mw-headline" id="Etiquetas_y_selectores">Etiquetas y selectores</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=4" title="Editar sección: Etiquetas y selectores">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Kubernetes permite a los clientes (usuarios o componentes internos) vincular pares clave-valor llamados etiquetas (en inglés <i>label</i>) a cualquier objeto API en el sistema, como <i>pods</i> o nodos. Correspondientemente, selectores de etiquetas son consultas contra las etiquetas que resuelven a los objetos que las satisfacen.<sup id="cite_ref-:0_15-3" class="reference separada"><a href="#cite_note-:0-15"><span class="corchete-llamada">[</span>15<span class="corchete-llamada">]</span></a></sup>&#8203;
+</p><p>Las etiquetas y los selectores son el mecanismo principal de agrupamiento en Kubernetes, y son utilizados para determinar los componentes sobre los cuales aplica una operación.<sup id="cite_ref-d25f512f_18-0" class="reference separada"><a href="#cite_note-d25f512f-18"><span class="corchete-llamada">[</span>18<span class="corchete-llamada">]</span></a></sup>&#8203;
+</p><p>Por ejemplo, si un <i>pod</i> de una aplicación tiene la etiqueta para un nivel del sistema (“front-end”, “back-end”, por ejemplo) y un <i>release_track</i> (“canary”, “production”, por ejemplo), entonces una operación sobre todos los nodos “back-end” y “canary” podría utilizar un selector de etiquetas como el siguiente:<sup id="cite_ref-9836bae9_19-0" class="reference separada"><a href="#cite_note-9836bae9-19"><span class="corchete-llamada">[</span>19<span class="corchete-llamada">]</span></a></sup>&#8203;
+</p>
+<pre>nivel=back-end AND release_track=canary</pre>
+<h3><span class="mw-headline" id="Controladores">Controladores</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=5" title="Editar sección: Controladores">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Un controlador es un bucle de reconciliación que lleva al estado real del clúster hacia el estado deseado.<sup id="cite_ref-20" class="reference separada"><a href="#cite_note-20"><span class="corchete-llamada">[</span>20<span class="corchete-llamada">]</span></a></sup>&#8203; Hace esto mediante la administración de un conjunto de pods. Un tipo de controlador es un "Replication Controller", que se encarga de la replicación y escala mediante la ejecución de un número especificado de copias de un pod a través de un clúster. También se encarga de crear pods de reemplazo si un nodo subyacente falla.<sup id="cite_ref-d25f512f_18-1" class="reference separada"><a href="#cite_note-d25f512f-18"><span class="corchete-llamada">[</span>18<span class="corchete-llamada">]</span></a></sup>&#8203; Otros controladores que forma parte del sistema central de Kubernetes incluye al "DaemonSet Controller" para la ejecución de exactamente un pod en cada máquina (o algún subconjunto de máquinas), y un "Job Controller" para ejecutar pods que ejecutan hasta su finalización, por ejemplo como parte de un trabajo batch.<sup id="cite_ref-21" class="reference separada"><a href="#cite_note-21"><span class="corchete-llamada">[</span>21<span class="corchete-llamada">]</span></a></sup>&#8203; El conjunto de pods que un controlador administra está determinado por los selectores de etiquetas que forman parte de la definición del controlador.<sup id="cite_ref-9836bae9_19-1" class="reference separada"><a href="#cite_note-9836bae9-19"><span class="corchete-llamada">[</span>19<span class="corchete-llamada">]</span></a></sup>&#8203;
+</p>
+<h3><span class="mw-headline" id="Servicios">Servicios</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=6" title="Editar sección: Servicios">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Un servicio Kubernetes es un conjunto de pods que trabajan en conjunto, como una capa de una aplicación multicapas. El conjunto de pods que constituyen un servicio está definido por el selector de etiquetas.<sup id="cite_ref-:0_15-4" class="reference separada"><a href="#cite_note-:0-15"><span class="corchete-llamada">[</span>15<span class="corchete-llamada">]</span></a></sup>&#8203; Kubernetes provee de un servicio de descubrimiento y enrutamiento de pedidos mediante la asignación de una dirección IP estable y un nombre DNS al servicio, y balancea la carga de tráfico en un estilo <i><a href="/wiki/Round-robin" class="mw-redirect" title="Round-robin">round-robin</a></i> hacia las conexiones de red de las direcciones IP entre los pods que verifican el selector (incluso cuando fallas causan que los pods se muevan de máquina en máquina).<sup id="cite_ref-:1_16-1" class="reference separada"><a href="#cite_note-:1-16"><span class="corchete-llamada">[</span>16<span class="corchete-llamada">]</span></a></sup>&#8203; Por defecto un servicio es expuesto dentro de un clúster (por ejemplo, <i>pods</i> de un back end pueden ser agrupados en un servicio, con las peticiones de los pods de front end siendo balanceadas entre ellos), pero un servicio también puede ser expuesto hacia afuera del clúster.
+</p>
+<h2><span id="M.C3.B3dulos_b.C3.A1sicos_de_Kubernetes"></span><span class="mw-headline" id="Módulos_básicos_de_Kubernetes">Módulos básicos de Kubernetes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=7" title="Editar sección: Módulos básicos de Kubernetes">editar</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>En forma práctica y general se describe a continuación la creación y administración de <i>Cápsulas(Pods)</i>.<sup>[<i><a href="/wiki/Wikipedia:Verificabilidad" title="Wikipedia:Verificabilidad">cita&#160;requerida</a></i>]</sup>
+</p>
+<h3><span id="Creaci.C3.B3n_de_un_cl.C3.BAster_de_Kubernetes"></span><span class="mw-headline" id="Creación_de_un_clúster_de_Kubernetes">Creación de un clúster de Kubernetes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=8" title="Editar sección: Creación de un clúster de Kubernetes">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Kubernetes coordina un grupo de computadores de alta disponibilidad que están conectadas para funcionar como una sola unidad. Las abstracciones en Kubernetes le permiten implementar aplicaciones en contenedores en un <a href="/wiki/Cl%C3%BAster_(inform%C3%A1tica)" class="mw-redirect" title="Clúster (informática)">clúster</a> sin vincularlas específicamente a máquinas individuales. Para hacer uso de este nuevo modelo de implementación, las aplicaciones se deben empaquetar de una manera que las separe de los <a href="/wiki/Host" title="Host">hosts</a> individuales: deben estar en contenedores.
+</p>
+<h3><span id="Despliegue_de_una_aplicaci.C3.B3n"></span><span class="mw-headline" id="Despliegue_de_una_aplicación">Despliegue de una aplicación</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=9" title="Editar sección: Despliegue de una aplicación">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Se puede crear y administrar una implementación utilizando la interfaz de línea de comandos de Kubernetes, Kubectl. Kubectl utiliza la <a href="/wiki/Interfaz_de_programaci%C3%B3n_de_aplicaciones" class="mw-redirect" title="Interfaz de programación de aplicaciones">API</a> de Kubernetes para interactuar con el clúster. Cuando se crea una implementación, se deberá especificar la imagen del contenedor para su aplicación y el número de réplicas que se desean ejecutar. Se puede cambiar esa información más adelante actualizando su <i>Implementación</i>.
+</p>
+<h3><span id="Exploraci.C3.B3n_de_aplicaciones"></span><span class="mw-headline" id="Exploración_de_aplicaciones">Exploración de aplicaciones</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=10" title="Editar sección: Exploración de aplicaciones">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Al crear una implementación, Kubernetes crea un <i>Pod</i> para alojar su instancia de aplicación. Un Pod es una abstracción de Kubernetes que representa un grupo de uno o más contenedores de aplicaciones (como Docker o rkt), y algunos recursos compartidos para esos contenedores.
+</p>
+<h3><span class="mw-headline" id="Mantenimiento_de_Pods">Mantenimiento de <i>Pods</i></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=11" title="Editar sección: Mantenimiento de Pods">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Los pods Kubernetes son mortales. Los pods de hecho tienen un ciclo de vida. Cuando un nodo trabajador "muere", los pods que se ejecutan en el nodo también se pierden. Luego, un controlador de replicación puede hacer que el clúster regrese dinámicamente al estado deseado mediante la creación de nuevos pods para mantener su aplicación en ejecución.
+</p>
+<h3><span id="Ampliaci.C3.B3n_de_aplicaciones"></span><span class="mw-headline" id="Ampliación_de_aplicaciones">Ampliación de aplicaciones</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=12" title="Editar sección: Ampliación de aplicaciones">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Al crear un <i>Despliegue</i> se expone públicamente a través de un Servicio. La implementación creó solo un <i>pod</i> para ejecutar nuestra aplicación. Cuando el tráfico aumenta, se debe escalar (aumentar en recursos y número) la aplicación para satisfacer la demanda de los usuarios. El <i>escalado</i> se realiza cambiando el número de réplicas en una implementación.
+</p>
+<h3><span id="Actualizaci.C3.B3n_de_aplicaciones"></span><span class="mw-headline" id="Actualización_de_aplicaciones">Actualización de aplicaciones</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=13" title="Editar sección: Actualización de aplicaciones">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Los usuarios esperan que las aplicaciones estén disponibles todo el tiempo y se espera que los desarrolladores implementen nuevas versiones de ellas varias veces al día. En Kubernetes esto se hace con actualizaciones sucesivas. Las actualizaciones continuas permiten que la actualización de <i>Implementaciones</i> tenga lugar sin tiempo de inactividad al actualizar incrementalmente las instancias de <i>pods</i> con otras nuevas. Los nuevos <i>Pods</i> serán programados en Nodos con recursos disponibles.
+</p>
+<h2><span class="mw-headline" id="Arquitectura">Arquitectura</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=14" title="Editar sección: Arquitectura">editar</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Kubernetes sigue una arquitectura maestro-esclavo. Los componentes de Kubernetes pueden ser divididos en aquellos que administran un nodo individual y aquellos que son partes de un panel de control.<sup id="cite_ref-a7171799_22-0" class="reference separada"><a href="#cite_note-a7171799-22"><span class="corchete-llamada">[</span>22<span class="corchete-llamada">]</span></a></sup>&#8203;<sup id="cite_ref-:0_15-5" class="reference separada"><a href="#cite_note-:0-15"><span class="corchete-llamada">[</span>15<span class="corchete-llamada">]</span></a></sup>&#8203;
+</p>
+<h3><span class="mw-headline" id="etc">etc</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=15" title="Editar sección: etc">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><code>etcd</code> es un almacén de datos persistente, liviano, distribuido de clave-valor desarrollado por CoreOS que almacena de manera confiable los datos de configuración del clúster, representando el estado general del clúster en un punto del tiempo dado. Otros componentes escuchan por cambios en este almacén para avanzar al estado deseado.<sup id="cite_ref-a7171799_22-1" class="reference separada"><a href="#cite_note-a7171799-22"><span class="corchete-llamada">[</span>22<span class="corchete-llamada">]</span></a></sup>&#8203;
+</p>
+<h3><span class="mw-headline" id="Servidor_de_API">Servidor de API</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=16" title="Editar sección: Servidor de API">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>El servidor API es un componente central y sirve a la API de Kubernetes utilizando <a href="/wiki/JSON" title="JSON">JSON</a> sobre HTTP, que proveen la interfaz interna y externa de Kubernetes.<sup id="cite_ref-:0_15-6" class="reference separada"><a href="#cite_note-:0-15"><span class="corchete-llamada">[</span>15<span class="corchete-llamada">]</span></a></sup>&#8203;<sup id="cite_ref-:2_23-0" class="reference separada"><a href="#cite_note-:2-23"><span class="corchete-llamada">[</span>23<span class="corchete-llamada">]</span></a></sup>&#8203; El servidor API procesa y valida las peticiones <a href="/wiki/REST" class="mw-redirect" title="REST">REST</a> y actualiza el estado de los objetos API en <code>etcd</code>, así permitiendo a los clientes configurar flujos de trabajos y contenedores a través de los nodos esclavos.
+</p>
+<h3><span class="mw-headline" id="Planificador">Planificador</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=17" title="Editar sección: Planificador">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>El planificador es el componente enchufable que selecciona sobre qué nodo deberá correr un <i>pod</i> sin planificar (la unidad básica de manejo del planificador) basado en la disponibilidad de recursos. El planificador lleva la cuenta de la utilización de recursos en cada nodo para asegurar que un flujo de trabajo no es planificado en exceso de la disponibilidad de los recursos. Para este propósito, el planificador debe conocer los requerimientos de recursos, la disponibilidad de recursos y una variedad de restricciones y políticas directivas como <i>quality-of-service</i> (QoS), requerimiento de afinidad, localización de datos entre otros. En esencia, el rol del planificador es el de emparejar la oferta de un recurso con la demanda de un flujo de trabajos.<sup id="cite_ref-24" class="reference separada"><a href="#cite_note-24"><span class="corchete-llamada">[</span>24<span class="corchete-llamada">]</span></a></sup>&#8203;
+</p>
+<h3><span class="mw-headline" id="Administrador_del_controlador">Administrador del controlador</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=18" title="Editar sección: Administrador del controlador">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>El administrador de controlador es el proceso sobre el cual el núcleo de los controladores Kubernetes como DaemonSet y Replication se ejecuta. Los controladores se comunican con el servidor API para crear, actualizar y eliminar recursos que ellos manejan (<i>pods</i>, servicios, etc.)<sup id="cite_ref-:2_23-1" class="reference separada"><a href="#cite_note-:2-23"><span class="corchete-llamada">[</span>23<span class="corchete-llamada">]</span></a></sup>&#8203;.
+</p>
+<h3><span class="mw-headline" id="Nodo_Kubernetes">Nodo Kubernetes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=19" title="Editar sección: Nodo Kubernetes">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>El nodo, también conocido como esclavo o <i>worker</i>, es la máquina física (o virtual) donde los contenedores (flujos de trabajos) son desplegados. Cada nodo en el clúster debe ejecutar la rutina de tiempo de ejecución (como Docker), así como también los componentes mencionados más abajo, para comunicarse con el maestro para la configuración en red de estos contenedores.
+</p>
+<h3><span class="mw-headline" id="Kubelet">Kubelet</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=20" title="Editar sección: Kubelet">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Kubelet es responsable por el estado de ejecución de cada nodo (es decir, asegurarse que todos los contenedores en el nodo se encuentran saludables). Se encarga del inicio, la detención y el mantenimiento de los contenedores de aplicaciones (organizados como <i>pods</i>) como es indicado por el panel de control.<sup id="cite_ref-:0_15-7" class="reference separada"><a href="#cite_note-:0-15"><span class="corchete-llamada">[</span>15<span class="corchete-llamada">]</span></a></sup>&#8203;<sup id="cite_ref-25" class="reference separada"><a href="#cite_note-25"><span class="corchete-llamada">[</span>25<span class="corchete-llamada">]</span></a></sup>&#8203;
+</p><p>Kubelet monitorea el estado de un <i>pod</i> y, si no se encuentra en el estado deseado, el <i>pod</i> será desplegado nuevamente al mismo nodo. El estado del nodo es comunicado al maestro cada pocos segundos mediante una señal periódica (<i><a href="https://en.wikipedia.org/wiki/Heartbeat_(computing)" class="extiw" title="en:Heartbeat (computing)">"heartbeat"</a></i>). Una vez que el nodo detecta la falla de un nodo, el Replication Controller observa este cambio de estado y lanza <i>pods</i> en otros nodos sanos.
+</p>
+<h3><span class="mw-headline" id="Kube-Proxy">Kube-Proxy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=21" title="Editar sección: Kube-Proxy">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Kube-Proxy es la implementación de un proxy de red y balanceador de carga soportando la abstracción del servicio junto con otras operaciones de red.<sup id="cite_ref-:0_15-8" class="reference separada"><a href="#cite_note-:0-15"><span class="corchete-llamada">[</span>15<span class="corchete-llamada">]</span></a></sup>&#8203; Es responsable del enrutamiento del tráfico hacia el contenedor correcto basado en la dirección IP y el número de puerto indicados en el pedido.
+</p>
+<h3><span class="mw-headline" id="cAdvisor">cAdvisor</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=22" title="Editar sección: cAdvisor">editar</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>cAdvisor es un agente que monitorea y recoge métricas de utilización de recursos y rendimiento como CPU, memoria, uso de archivos y red de los contenedores en cada nodo.
+</p>
+<h2><span id="V.C3.A9ase_tambi.C3.A9n"></span><span class="mw-headline" id="Véase_también">Véase también</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=23" title="Editar sección: Véase también">editar</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li><a href="/wiki/LXC" title="LXC">LXC</a></li></ul>
+<h2><span class="mw-headline" id="Referencias">Referencias</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Kubernetes&amp;action=edit&amp;section=24" title="Editar sección: Referencias">editar</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="listaref" style="-moz-column-count:2; -webkit-column-count:2; column-count:2; list-style-type: decimal;"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text"><span class="citation"><a rel="nofollow" class="external text" href="https://github.com/kubernetes/kubernetes"><i>kubernetes: Production-Grade Container Scheduling and Management</i></a>, Kubernetes, 7 de julio de 2017<span class="reference-accessdate">, consultado el 7 de julio de 2017</span></span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.btitle=kubernetes%3A+Production-Grade+Container+Scheduling+and+Management&amp;rft.date=7+de+julio+de+2017&amp;rft.genre=book&amp;rft.pub=Kubernetes&amp;rft_id=https%3A%2F%2Fgithub.com%2Fkubernetes%2Fkubernetes&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span>.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text"><span class="citation"><a rel="nofollow" class="external text" href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md#dockershim-removed-from-kubelet"><i>kubernetes: Changelog version 1.24</i></a>, Kubernetes, 24 de mayo de 2022<span class="reference-accessdate">, consultado el 27 de mayo de 2022</span></span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.btitle=kubernetes%3A+Changelog+version+1.24&amp;rft.date=24+de+mayo+de+2022&amp;rft.genre=book&amp;rft.pub=Kubernetes&amp;rft_id=https%3A%2F%2Fgithub.com%2Fkubernetes%2Fkubernetes%2Fblob%2Fmaster%2FCHANGELOG%2FCHANGELOG-1.24.md%23dockershim-removed-from-kubelet&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span>.</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text"><span class="citation"><a rel="nofollow" class="external text" href="https://kubernetes.io/blog/2022/05/03/kubernetes-1-24-release-announcement/#dockershim-removed-from-kubelet"><i>Kubernetes 1.24: Stargazer</i></a>, Kubernetes, 3 de mayo de 2022<span class="reference-accessdate">, consultado el 27 de mayo de 2022</span></span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.btitle=Kubernetes+1.24%3A+Stargazer&amp;rft.date=03+de+mayo+de+2022&amp;rft.genre=book&amp;rft.pub=Kubernetes&amp;rft_id=https%3A%2F%2Fkubernetes.io%2Fblog%2F2022%2F05%2F03%2Fkubernetes-1-24-release-announcement%2F%23dockershim-removed-from-kubelet&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span>.</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text"><span class="citation noticia"><a rel="nofollow" class="external text" href="https://www.wired.com/2015/06/google-kubernetes-says-future-cloud-computing/">«Google Made Its Secret Blueprint Public to Boost Its Cloud»</a>. <i>WIRED</i> <span style="color:#555;">(en inglés estadounidense)</span><span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=Google+Made+Its+Secret+Blueprint+Public+to+Boost+Its+Cloud&amp;rft.genre=article&amp;rft.jtitle=WIRED&amp;rft_id=https%3A%2F%2Fwww.wired.com%2F2015%2F06%2Fgoogle-kubernetes-says-future-cloud-computing%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><a href="#cite_ref-5">↑</a></span> <span class="reference-text"><span class="citation noticia"><a rel="nofollow" class="external text" href="https://www.wired.com/2014/06/google-kubernetes/">«Google Open Sources Its Secret Weapon in Cloud Computing»</a>. <i>WIRED</i> <span style="color:#555;">(en inglés estadounidense)</span><span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=Google+Open+Sources+Its+Secret+Weapon+in+Cloud+Computing&amp;rft.genre=article&amp;rft.jtitle=WIRED&amp;rft_id=https%3A%2F%2Fwww.wired.com%2F2014%2F06%2Fgoogle-kubernetes%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><a href="#cite_ref-6">↑</a></span> <span class="reference-text"><span id="CITAREFVermaPedrosaKorupoluOppenheimer2015" class="citation publicación">Verma, Abhishek; Pedrosa, Luis; Korupolu, Madhukar R.; Oppenheimer, David; Tune, Eric; Wilkes, John (2015). <a rel="nofollow" class="external text" href="https://research.google.com/pubs/pub43438.html"><i>Large-scale cluster management at Google with Borg</i></a> <span style="color:#555;">(en inglés)</span><span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.au=Korupolu%2C+Madhukar+R.&amp;rft.au=Oppenheimer%2C+David&amp;rft.au=Pedrosa%2C+Luis&amp;rft.au=Tune%2C+Eric&amp;rft.au=Verma%2C+Abhishek&amp;rft.au=Wilkes%2C+John&amp;rft.aufirst=Abhishek&amp;rft.aulast=Verma&amp;rft.btitle=Large-scale+cluster+management+at+Google+with+Borg&amp;rft.date=2015&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Fresearch.google.com%2Fpubs%2Fpub43438.html&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><a href="#cite_ref-7">↑</a></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://queue.acm.org/detail.cfm?id=2898444">«Borg, Omega, and Kubernetes - ACM Queue»</a>. <i>queue.acm.org</i><span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=Borg%2C+Omega%2C+and+Kubernetes+-+ACM+Queue&amp;rft.genre=article&amp;rft.jtitle=queue.acm.org&amp;rft_id=http%3A%2F%2Fqueue.acm.org%2Fdetail.cfm%3Fid%3D2898444&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite_ref-8">↑</a></span> <span class="reference-text"><span class="citation noticia"><a rel="nofollow" class="external text" href="http://www.eweek.com/cloud/early-stage-startup-heptio-aims-to-make-kubernetes-friendly.html">«Early Stage Startup Heptio Aims to Make Kubernetes Friendly»</a>. <i>eWEEK</i> <span style="color:#555;">(en inglés estadounidense)</span><span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=Early+Stage+Startup+Heptio+Aims+to+Make+Kubernetes+Friendly&amp;rft.genre=article&amp;rft.jtitle=eWEEK&amp;rft_id=http%3A%2F%2Fwww.eweek.com%2Fcloud%2Fearly-stage-startup-heptio-aims-to-make-kubernetes-friendly.html&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span class="reference-text"><span id="CITAREFLardinois" class="citation web">Lardinois, Frederic. <a rel="nofollow" class="external text" href="https://techcrunch.com/2015/07/21/as-kubernetes-hits-1-0-google-donates-technology-to-newly-formed-cloud-native-computing-foundation-with-ibm-intel-twitter-and-others/">«As Kubernetes Hits 1.0, Google Donates Technology To Newly Formed Cloud Native Computing Foundation | TechCrunch»</a><span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.au=Lardinois%2C+Frederic&amp;rft.aufirst=Frederic&amp;rft.aulast=Lardinois&amp;rft.btitle=As+Kubernetes+Hits+1.0%2C+Google+Donates+Technology+To+Newly+Formed+Cloud+Native+Computing+Foundation+%7C+TechCrunch&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Ftechcrunch.com%2F2015%2F07%2F21%2Fas-kubernetes-hits-1-0-google-donates-technology-to-newly-formed-cloud-native-computing-foundation-with-ibm-intel-twitter-and-others%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><a href="#cite_ref-10">↑</a></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="https://cncf.io/">«Home - Cloud Native Computing Foundation»</a>. <i>Cloud Native Computing Foundation</i> <span style="color:#555;">(en inglés estadounidense)</span><span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=Home+-+Cloud+Native+Computing+Foundation&amp;rft.genre=article&amp;rft.jtitle=Cloud+Native+Computing+Foundation&amp;rft_id=https%3A%2F%2Fcncf.io%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite_ref-11">↑</a></span> <span class="reference-text"><span class="citation noticia"><a rel="nofollow" class="external text" href="http://rancher.com/kubernetes/">«Enterprise-grade Kubernetes Distribution | Rancher Labs»</a>. <i>Rancher Labs</i> <span style="color:#555;">(en inglés estadounidense)</span><span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=Enterprise-grade+Kubernetes+Distribution+%7C+Rancher+Labs&amp;rft.genre=article&amp;rft.jtitle=Rancher+Labs&amp;rft_id=http%3A%2F%2Francher.com%2Fkubernetes%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><a href="#cite_ref-12">↑</a></span> <span class="reference-text"><span class="citation noticia"><a rel="nofollow" class="external text" href="https://web.archive.org/web/20150706080038/https://blog.openshift.com/openshift-v3-platform-combines-docker-kubernetes-atomic-and-more/">«OpenShift v3 Platform Combines Docker, Kubernetes, Atomic and More – OpenShift Blog»</a>. <i>OpenShift Blog</i> <span style="color:#555;">(en inglés estadounidense)</span>. 14 de agosto de 2014. Archivado desde <a rel="nofollow" class="external text" href="https://blog.openshift.com/openshift-v3-platform-combines-docker-kubernetes-atomic-and-more/">el original</a> el 6 de julio de 2015<span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=OpenShift+v3+Platform+Combines+Docker%2C+Kubernetes%2C+Atomic+and+More+%E2%80%93+OpenShift+Blog&amp;rft.date=14+de+agosto+de+2014&amp;rft.genre=article&amp;rft.jtitle=OpenShift+Blog&amp;rft_id=https%3A%2F%2Fblog.openshift.com%2Fopenshift-v3-platform-combines-docker-kubernetes-atomic-and-more%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><a href="#cite_ref-13">↑</a></span> <span class="reference-text"><span class="citation noticia"><a rel="nofollow" class="external text" href="https://blog.openshift.com/red-hat-chose-kubernetes-openshift/">«Why Red Hat Chose Kubernetes for OpenShift – OpenShift Blog»</a>. <i>OpenShift Blog</i> <span style="color:#555;">(en inglés estadounidense)</span>. 7 de noviembre de 2016<span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=Why+Red+Hat+Chose+Kubernetes+for+OpenShift+%E2%80%93+OpenShift+Blog&amp;rft.date=7+de+noviembre+de+2016&amp;rft.genre=article&amp;rft.jtitle=OpenShift+Blog&amp;rft_id=https%3A%2F%2Fblog.openshift.com%2Fred-hat-chose-kubernetes-openshift%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><a href="#cite_ref-14">↑</a></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W1559b1be149d_43b0_881e_9783f38faaff">«Welcome to Wikis»</a>. <i>www.ibm.com</i> <span style="color:#555;">(en inglés)</span>. 20 de octubre de 2009<span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=Welcome+to+Wikis&amp;rft.date=20+de+octubre+de+2009&amp;rft.genre=article&amp;rft.jtitle=www.ibm.com&amp;rft_id=https%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Fcommunity%2Fwikis%2Fhome%3Flang%3Den%23%21%2Fwiki%2FW1559b1be149d_43b0_881e_9783f38faaff&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-:0-15"><span class="mw-cite-backlink">↑ <a href="#cite_ref-:0_15-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-:0_15-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-:0_15-2"><sup><i><b>c</b></i></sup></a> <a href="#cite_ref-:0_15-3"><sup><i><b>d</b></i></sup></a> <a href="#cite_ref-:0_15-4"><sup><i><b>e</b></i></sup></a> <a href="#cite_ref-:0_15-5"><sup><i><b>f</b></i></sup></a> <a href="#cite_ref-:0_15-6"><sup><i><b>g</b></i></sup></a> <a href="#cite_ref-:0_15-7"><sup><i><b>h</b></i></sup></a> <a href="#cite_ref-:0_15-8"><sup><i><b>i</b></i></sup></a></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="https://www.digitalocean.com/community/tutorials/an-introduction-to-kubernetes">«An Introduction to Kubernetes | DigitalOcean»</a>. <i>www.digitalocean.com</i> <span style="color:#555;">(en inglés)</span><span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=An+Introduction+to+Kubernetes+%7C+DigitalOcean&amp;rft.genre=article&amp;rft.jtitle=www.digitalocean.com&amp;rft_id=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Fan-introduction-to-kubernetes&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-:1-16"><span class="mw-cite-backlink">↑ <a href="#cite_ref-:1_16-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-:1_16-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation noticia"><a rel="nofollow" class="external text" href="http://www.dasblinkenlichten.com/kubernetes-101-networking/">«Kubernetes 101 – Networking»</a>. <i>Das Blinken Lichten</i> <span style="color:#555;">(en inglés estadounidense)</span>. 12 de febrero de 2015<span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=Kubernetes+101+%E2%80%93+Networking&amp;rft.date=12+de+febrero+de+2015&amp;rft.genre=article&amp;rft.jtitle=Das+Blinken+Lichten&amp;rft_id=http%3A%2F%2Fwww.dasblinkenlichten.com%2Fkubernetes-101-networking%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><a href="#cite_ref-17">↑</a></span> <span class="reference-text"><span id="CITAREFStrachan21_de_mayo_de_2015" class="citation web">Strachan, James (21 de mayo de 2015). <a rel="nofollow" class="external text" href="https://blog.fabric8.io/kubernetes-for-developers-2a9c7202fcd3">«Kubernetes for developers»</a>. <i>fabric8 io</i><span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=Kubernetes+for+developers&amp;rft.au=Strachan%2C+James&amp;rft.aufirst=James&amp;rft.aulast=Strachan&amp;rft.date=21+de+mayo+de+2015&amp;rft.genre=article&amp;rft.jtitle=fabric8+io&amp;rft_id=https%3A%2F%2Fblog.fabric8.io%2Fkubernetes-for-developers-2a9c7202fcd3&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-d25f512f-18"><span class="mw-cite-backlink">↑ <a href="#cite_ref-d25f512f_18-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-d25f512f_18-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation noticia"><a rel="nofollow" class="external text" href="https://www.linkedin.com/pulse/containerizing-docker-kubernetes-ramit-surana">«Containerizing Docker on Kubernetes&#160;!!»</a> <span style="color:#555;">(en inglés)</span>. 16 de septiembre de 2015<span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.btitle=Containerizing+Docker+on+Kubernetes+%21%21&amp;rft.date=16+de+septiembre+de+2015&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Fwww.linkedin.com%2Fpulse%2Fcontainerizing-docker-kubernetes-ramit-surana&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-9836bae9-19"><span class="mw-cite-backlink">↑ <a href="#cite_ref-9836bae9_19-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-9836bae9_19-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="https://web.archive.org/web/20151029210659/http://christianposta.com/slides/docker/generated/day2.html#/label-examples">«http://christianposta.com/slides/docker/generated/day2.html#/label-examples»</a>. <i>christianposta.com</i> <span style="color:#555;">(en inglés)</span>. Archivado desde <a rel="nofollow" class="external text" href="http://christianposta.com/slides/docker/generated/day2.html#/label-examples">el original</a> el 29 de octubre de 2015<span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=http%3A%2F%2Fchristianposta.com%2Fslides%2Fdocker%2Fgenerated%2Fday2.html%23%2Flabel-examples&amp;rft.genre=article&amp;rft.jtitle=christianposta.com&amp;rft_id=http%3A%2F%2Fchristianposta.com%2Fslides%2Fdocker%2Fgenerated%2Fday2.html%23%2Flabel-examples&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><a href="#cite_ref-20">↑</a></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="https://coreos.com/kubernetes/docs/latest/replication-controller.html">«CoreOS»</a>. <i>coreos.com</i> <span style="color:#555;">(en inglés)</span><span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=CoreOS&amp;rft.genre=article&amp;rft.jtitle=coreos.com&amp;rft_id=https%3A%2F%2Fcoreos.com%2Fkubernetes%2Fdocs%2Flatest%2Freplication-controller.html&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><a href="#cite_ref-21">↑</a></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.livewyer.com/blog/2015/10/02/kubernetes-exciting-experimental-features">«LiveWyer | Kubernetes &amp; Cloud Native Computing Experts | Kubernetes: Exciting Experimental Features»</a>. <i>www.livewyer.com</i> <span style="color:#555;">(en inglés)</span><span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=LiveWyer+%7C+Kubernetes+%26+Cloud+Native+Computing+Experts+%7C+Kubernetes%3A+Exciting+Experimental+Features&amp;rft.genre=article&amp;rft.jtitle=www.livewyer.com&amp;rft_id=http%3A%2F%2Fwww.livewyer.com%2Fblog%2F2015%2F10%2F02%2Fkubernetes-exciting-experimental-features&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-a7171799-22"><span class="mw-cite-backlink">↑ <a href="#cite_ref-a7171799_22-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-a7171799_22-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="https://web.archive.org/web/20150706121423/https://docs.openshift.org/latest/architecture/infrastructure_components/kubernetes_infrastructure.html">«Kubernetes Infrastructure - Infrastructure Components | Architecture | OpenShift Origin Latest»</a>. <i>docs.openshift.org</i>. Archivado desde <a rel="nofollow" class="external text" href="https://docs.openshift.org/latest/architecture/infrastructure_components/kubernetes_infrastructure.html">el original</a> el 6 de julio de 2015<span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=Kubernetes+Infrastructure+-+Infrastructure+Components+%7C+Architecture+%7C+OpenShift+Origin+Latest&amp;rft.genre=article&amp;rft.jtitle=docs.openshift.org&amp;rft_id=https%3A%2F%2Fdocs.openshift.org%2Flatest%2Farchitecture%2Finfrastructure_components%2Fkubernetes_infrastructure.html&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-:2-23"><span class="mw-cite-backlink">↑ <a href="#cite_ref-:2_23-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-:2_23-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://kamalmarhubi.com/blog/2015/09/06/kubernetes-from-the-ground-up-the-api-server/">«Kubernetes from the ground up: the API server»</a>. <i>kamalmarhubi.com</i><span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=Kubernetes+from+the+ground+up%3A+the+API+server&amp;rft.genre=article&amp;rft.jtitle=kamalmarhubi.com&amp;rft_id=http%3A%2F%2Fkamalmarhubi.com%2Fblog%2F2015%2F09%2F06%2Fkubernetes-from-the-ground-up-the-api-server%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-24"><span class="mw-cite-backlink"><a href="#cite_ref-24">↑</a></span> <span class="reference-text"><span class="citation noticia"><a rel="nofollow" class="external text" href="http://rancher.com/three-pillars-kubernetes-container-orchestration/">«The Three Pillars of Kubernetes Container Orchestration | Rancher Labs»</a>. <i>Rancher Labs</i> <span style="color:#555;">(en inglés estadounidense)</span>. 18 de mayo de 2017<span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=The+Three+Pillars+of+Kubernetes+Container+Orchestration+%7C+Rancher+Labs&amp;rft.date=18+de+mayo+de+2017&amp;rft.genre=article&amp;rft.jtitle=Rancher+Labs&amp;rft_id=http%3A%2F%2Francher.com%2Fthree-pillars-kubernetes-container-orchestration%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+<li id="cite_note-25"><span class="mw-cite-backlink"><a href="#cite_ref-25">↑</a></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://kamalmarhubi.com/blog/2015/08/27/what-even-is-a-kubelet/">«What even is a kubelet?»</a>. <i>kamalmarhubi.com</i><span class="reference-accessdate">. Consultado el 7 de julio de 2017</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AKubernetes&amp;rft.atitle=What+even+is+a+kubelet%3F&amp;rft.genre=article&amp;rft.jtitle=kamalmarhubi.com&amp;rft_id=http%3A%2F%2Fkamalmarhubi.com%2Fblog%2F2015%2F08%2F27%2Fwhat-even-is-a-kubelet%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span>
+</li>
+</ol></div>
+<style data-mw-deduplicate="TemplateStyles:r149592108">.mw-parser-output .mw-authority-control{margin-top:1.5em}.mw-parser-output .mw-authority-control .navbox table{margin:0}.mw-parser-output .mw-authority-control .navbox hr:last-child{display:none}.mw-parser-output .mw-authority-control .navbox+.mw-mf-linked-projects{display:none}.mw-parser-output .mw-authority-control .mw-mf-linked-projects{display:flex;padding:0.5em;border:1px solid #c8ccd1;background-color:#eaecf0;color:#222222}.mw-parser-output .mw-authority-control .mw-mf-linked-projects ul li{margin-bottom:0}</style><div class="mw-authority-control"><div role="navigation" class="navbox" aria-label="Navbox" style="width: inherit;padding:3px"><table class="hlist navbox-inner" style="border-spacing:0;background:transparent;color:inherit"><tbody><tr><th scope="row" class="navbox-group" style="width: 12%; text-align:center;"><a href="/wiki/Control_de_autoridades" title="Control de autoridades">Control de autoridades</a></th><td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px"><div style="padding:0em 0.25em">
+<ul><li><b>Proyectos Wikimedia</b></li>
+<li><span style="white-space:nowrap;"><span typeof="mw:File"><a href="/wiki/Wikidata" title="Wikidata"><img alt="Wd" src="//upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Wikidata-logo.svg/20px-Wikidata-logo.svg.png" decoding="async" width="20" height="11" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Wikidata-logo.svg/30px-Wikidata-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Wikidata-logo.svg/40px-Wikidata-logo.svg.png 2x" data-file-width="1050" data-file-height="590" /></a></span> Datos:</span> <span class="uid"><a href="https://www.wikidata.org/wiki/Q22661306" class="extiw" title="wikidata:Q22661306">Q22661306</a></span></li>
+<li><span style="white-space:nowrap;"><span typeof="mw:File"><a href="/wiki/Wikimedia_Commons" title="Commonscat"><img alt="Commonscat" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/15px-Commons-logo.svg.png" decoding="async" width="15" height="20" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/23px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/30px-Commons-logo.svg.png 2x" data-file-width="1024" data-file-height="1376" /></a></span> Multimedia:</span> <span class="uid"><span class="plainlinks"><a class="external text" href="https://commons.wikimedia.org/wiki/Category:Kubernetes">Kubernetes</a></span> / <span class="plainlinks"><a class="external text" href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&amp;search=%22Q22661306%22">Q22661306</a></span></span></li></ul>
+<hr />
+<ul><li><b>Identificadores</b></li>
+<li><span style="white-space:nowrap;"><a href="/wiki/Gemeinsame_Normdatei" title="Gemeinsame Normdatei">GND</a>:</span> <span class="uid"><a rel="nofollow" class="external text" href="https://d-nb.info/gnd/1153019000">1153019000</a></span></li>
+<li><b>Informática</b></li>
+<li><span style="white-space:nowrap;">Arch Linux:</span> <span class="uid"><a rel="nofollow" class="external text" href="https://www.archlinux.org/packages/kubectl">kubectl</a></span></li>
+<li><span style="white-space:nowrap;">AUR:</span> <span class="uid"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/kubelet-bin/">kubelet-bin</a></span></li>
+<li><span style="white-space:nowrap;">Gentoo:</span> <span class="uid"><a rel="nofollow" class="external text" href="https://packages.gentoo.org/packages/sys-cluster/kube-controller-manager">sys-cluster/kube-controller-manager</a></span></li>
+<li><span style="white-space:nowrap;"><a href="/wiki/Open_Hub" title="Open Hub">Open Hub</a>:</span> <span class="uid"><a rel="nofollow" class="external text" href="https://www.openhub.net/p/kubernetes">kubernetes</a></span></li>
+<li><span style="white-space:nowrap;">Snap:</span> <span class="uid"><a rel="nofollow" class="external text" href="https://snapcraft.io/kubectl">kubectl</a></span></li></ul>
+</div></td></tr></tbody></table></div><div class="mw-mf-linked-projects hlist">
+<ul><li><span style="white-space:nowrap;"><span typeof="mw:File"><a href="/wiki/Wikidata" title="Wikidata"><img alt="Wd" src="//upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Wikidata-logo.svg/20px-Wikidata-logo.svg.png" decoding="async" width="20" height="11" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Wikidata-logo.svg/30px-Wikidata-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Wikidata-logo.svg/40px-Wikidata-logo.svg.png 2x" data-file-width="1050" data-file-height="590" /></a></span> Datos:</span> <span class="uid"><a href="https://www.wikidata.org/wiki/Q22661306" class="extiw" title="wikidata:Q22661306">Q22661306</a></span></li>
+<li><span style="white-space:nowrap;"><span typeof="mw:File"><a href="/wiki/Wikimedia_Commons" title="Commonscat"><img alt="Commonscat" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/15px-Commons-logo.svg.png" decoding="async" width="15" height="20" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/23px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/30px-Commons-logo.svg.png 2x" data-file-width="1024" data-file-height="1376" /></a></span> Multimedia:</span> <span class="uid"><span class="plainlinks"><a class="external text" href="https://commons.wikimedia.org/wiki/Category:Kubernetes">Kubernetes</a></span> / <span class="plainlinks"><a class="external text" href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&amp;search=%22Q22661306%22">Q22661306</a></span></span></li></ul>
+</div></div>
+<!-- 
+NewPP limit report
+Parsed by mw2273
+Cached time: 20230928123859
+Cache expiry: 1814400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.664 seconds
+Real time usage: 0.782 seconds
+Preprocessor visited node count: 1601/1000000
+Post‐expand include size: 73849/2097152 bytes
+Template argument size: 21406/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 9/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 35849/5000000 bytes
+Lua time usage: 0.538/10.000 seconds
+Lua memory usage: 28327578/52428800 bytes
+Number of Wikibase entities loaded: 8/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  727.310      1 -total
+ 35.33%  256.929      1 Plantilla:Ficha_de_software
+ 23.73%  172.617      1 Plantilla:Lang
+ 21.48%  156.250      1 Plantilla:Control_de_autoridades
+ 15.08%  109.662      1 Plantilla:Listaref
+  5.23%   38.030      3 Plantilla:Obra_citada
+  3.26%   23.705     12 Plantilla:Cita_web
+  3.26%   23.682      9 Plantilla:Cita_noticia
+  0.83%    6.006      1 Plantilla:Complejo
+  0.57%    4.179      1 Plantilla:Cita_publicación
+-->
+
+<!-- Saved in parser cache with key eswiki:pcache:idhash:7991557-0!canonical and timestamp 20230928123858 and revision id 153717770. Rendering was triggered because: page-view
+ -->
+</div><!--esi <esi:include src="/esitest-fa8a495983347898/content" /> --><noscript><img src="//es.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript>
+<div class="printfooter" data-nosnippet="">Obtenido de «<a dir="ltr" href="https://es.wikipedia.org/w/index.php?title=Kubernetes&amp;oldid=153717770">https://es.wikipedia.org/w/index.php?title=Kubernetes&amp;oldid=153717770</a>»</div></div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Especial:Categor%C3%ADas" title="Especial:Categorías">Categorías</a>: <ul><li><a href="/wiki/Categor%C3%ADa:Computaci%C3%B3n_en_nube" title="Categoría:Computación en nube">Computación en nube</a></li><li><a href="/wiki/Categor%C3%ADa:Software_libre" title="Categoría:Software libre">Software libre</a></li><li><a href="/wiki/Categor%C3%ADa:Software_de_contenerizaci%C3%B3n" title="Categoría:Software de contenerización">Software de contenerización</a></li><li><a href="/wiki/Categor%C3%ADa:Software_programado_en_Go" title="Categoría:Software programado en Go">Software programado en Go</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Categorías ocultas: <ul><li><a href="/wiki/Categor%C3%ADa:Wikipedia:Art%C3%ADculos_demasiado_complejos" title="Categoría:Wikipedia:Artículos demasiado complejos">Wikipedia:Artículos demasiado complejos</a></li><li><a href="/wiki/Categor%C3%ADa:Wikipedia:Art%C3%ADculos_con_texto_en_griego" title="Categoría:Wikipedia:Artículos con texto en griego">Wikipedia:Artículos con texto en griego</a></li><li><a href="/wiki/Categor%C3%ADa:Wikipedia:Art%C3%ADculos_con_pasajes_que_requieren_referencias" title="Categoría:Wikipedia:Artículos con pasajes que requieren referencias">Wikipedia:Artículos con pasajes que requieren referencias</a></li><li><a href="/wiki/Categor%C3%ADa:Wikipedia:Art%C3%ADculos_con_identificadores_GND" title="Categoría:Wikipedia:Artículos con identificadores GND">Wikipedia:Artículos con identificadores GND</a></li></ul></div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Esta página se editó por última vez el 13 sep 2023 a las 10:58.</li>
+	<li id="footer-info-copyright">El texto está disponible bajo la <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia Creative Commons Atribución Compartir Igual 4.0</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.es" style="display:none;"></a>;
+pueden aplicarse cláusulas adicionales. Al usar este sitio, usted acepta nuestros <a href="//foundation.wikimedia.org/wiki/Terms_of_Use">términos de uso</a> y nuestra <a href="//foundation.wikimedia.org/wiki/Privacy_policy">política de privacidad</a>. <br/>Wikipedia&reg; es una marca registrada de la <a href="//www.wikimediafoundation.org/">Fundación Wikimedia, Inc.</a>, una organización sin ánimo de lucro.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy/es">Política de privacidad</a></li>
+	<li id="footer-places-about"><a href="/wiki/Wikipedia:Acerca_de">Acerca de Wikipedia</a></li>
+	<li id="footer-places-disclaimers"><a href="/wiki/Wikipedia:Limitaci%C3%B3n_general_de_responsabilidad">Limitación de responsabilidad</a></li>
+	<li id="footer-places-wm-codeofconduct"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Universal_Code_of_Conduct">Código de conducta</a></li>
+	<li id="footer-places-mobileview"><a href="//es.m.wikipedia.org/w/index.php?title=Kubernetes&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Versión para móviles</a></li>
+	<li id="footer-places-developers"><a href="https://developer.wikimedia.org">Desarrolladores</a></li>
+	<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/es.wikipedia.org">Estadísticas</a></li>
+	<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement/es">Declaración de cookies</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://wikimediafoundation.org/"><img src="/static/images/footer/wikimedia-button.png" srcset="/static/images/footer/wikimedia-button-1.5x.png 1.5x, /static/images/footer/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation" loading="lazy" /></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/static/images/footer/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/footer/poweredby_mediawiki_132x47.png 1.5x, /static/images/footer/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+		</div>
+	</div> 
+</div> 
+<div class="vector-settings" id="p-dock-bottom">
+	<ul>
+		<li>
+		
+		<button class="cdx-button cdx-button--icon-only vector-limited-width-toggle" id=""><span class="vector-icon mw-ui-icon-fullScreen mw-ui-icon-wikimedia-fullScreen"></span>
+
+<span>Activar o desactivar el límite de anchura del contenido</span>
+</button>
+</li>
+	</ul>
+</div>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgHostname":"mw2273","wgBackendResponseTime":922,"wgPageParseReport":{"limitreport":{"cputime":"0.664","walltime":"0.782","ppvisitednodes":{"value":1601,"limit":1000000},"postexpandincludesize":{"value":73849,"limit":2097152},"templateargumentsize":{"value":21406,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":9,"limit":500},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":35849,"limit":5000000},"entityaccesscount":{"value":8,"limit":400},"timingprofile":["100.00%  727.310      1 -total"," 35.33%  256.929      1 Plantilla:Ficha_de_software"," 23.73%  172.617      1 Plantilla:Lang"," 21.48%  156.250      1 Plantilla:Control_de_autoridades"," 15.08%  109.662      1 Plantilla:Listaref","  5.23%   38.030      3 Plantilla:Obra_citada","  3.26%   23.705     12 Plantilla:Cita_web","  3.26%   23.682      9 Plantilla:Cita_noticia","  0.83%    6.006      1 Plantilla:Complejo","  0.57%    4.179      1 Plantilla:Cita_publicación"]},"scribunto":{"limitreport-timeusage":{"value":"0.538","limit":"10.000"},"limitreport-memusage":{"value":28327578,"limit":52428800}},"cachereport":{"origin":"mw2273","timestamp":"20230928123859","ttl":1814400,"transientcontent":false}}});});</script>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Article","name":"Kubernetes","url":"https:\/\/es.wikipedia.org\/wiki\/Kubernetes","sameAs":"http:\/\/www.wikidata.org\/entity\/Q22661306","mainEntity":"http:\/\/www.wikidata.org\/entity\/Q22661306","author":{"@type":"Organization","name":"Colaboradores de los proyectos Wikimedia"},"publisher":{"@type":"Organization","name":"Wikimedia Foundation, Inc.","logo":{"@type":"ImageObject","url":"https:\/\/www.wikimedia.org\/static\/images\/wmf-hor-googpub.png"}},"datePublished":"2017-07-07T03:18:05Z","dateModified":"2023-09-13T10:58:36Z","image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/b\/be\/Kubernetes.png","headline":"software para orquestar contenedores en un cl\u00faster."}</script>
+</body>
+</html>
