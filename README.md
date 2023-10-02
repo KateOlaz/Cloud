@@ -7,7 +7,8 @@
 
 2. **Crea y activa un entorno virtual:**
    ```bash
-   python -m venv venv
+   pip install virtualenv
+   virtualenv venv
    source venv/bin/activate
    
 4. **Instala las dependencias desde el archivo requirements.txt:**
