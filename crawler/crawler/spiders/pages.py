@@ -51,8 +51,6 @@ class PageSpider(scrapy.Spider):
             return f"https://es.wikipedia.org{url}"
 
     def obtener_nombre_archivo(self, url):
-        # Obtener el nombre del archivo a partir de la URL del enlace
-        # Reemplazar caracteres no válidos con guiones bajos y eliminar tildes
         clean_title = re.sub(r'[\/:*?"<>|]', '_', urllib.parse.unquote(url))
         clean_title = clean_title.split('wiki_')[-1]
         return f"{clean_title}.html"
